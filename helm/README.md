@@ -1,17 +1,18 @@
-# WeKnora Helm Chart
+# 势途AI企业级知识库 Helm Chart
 
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/weknora)](https://artifacthub.io/packages/helm/weknora/weknora)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Helm chart for deploying [WeKnora](https://github.com/Tencent/WeKnora) - an AI-powered Knowledge RAG Platform.
+Helm chart for deploying [势途AI企业级知识库](https://github.com/Aiysae/shitu-ai-knowledge) - an AI-powered Knowledge RAG Platform.
 
 ## Overview
 
-WeKnora is an intelligent knowledge base platform that combines:
+势途AI企业级知识库 is an intelligent knowledge base platform that combines:
 - Document parsing and understanding
 - Vector search with BM25 hybrid retrieval
 - LLM integration for conversational AI
 - Multi-tenant support with encryption
+
+本 Chart 的技术名称 `weknora` 保留兼容；镜像使用本项目命名空间。Kubernetes 模板与默认值已整理，真实集群部署尚未验收，首版优先使用 Docker Compose。
 
 ## Prerequisites
 
@@ -166,7 +167,7 @@ helm install weknora ./helm \
 |-----------|-------------|---------|
 | `app.enabled` | Enable backend | `true` |
 | `app.replicaCount` | Number of replicas | `1` |
-| `app.image.repository` | Image repository | `wechatopenai/weknora-app` |
+| `app.image.repository` | Image repository | `ghcr.io/aiysae/shitu-ai-app` |
 | `app.image.tag` | Image tag | `""` (uses appVersion) |
 | `app.resources` | Resource limits | See values.yaml |
 | `app.env` | Environment variables | See values.yaml |
@@ -178,8 +179,8 @@ helm install weknora ./helm \
 |-----------|-------------|---------|
 | `frontend.enabled` | Enable frontend | `true` |
 | `frontend.replicaCount` | Number of replicas | `1` |
-| `frontend.image.repository` | Image repository | `wechatopenai/weknora-ui` |
-| `frontend.image.tag` | Image tag | `latest` |
+| `frontend.image.repository` | Image repository | `ghcr.io/aiysae/shitu-ai-ui` |
+| `frontend.image.tag` | Image tag | `v0.1.0` |
 
 ### PostgreSQL (ParadeDB)
 
@@ -311,7 +312,7 @@ kubectl logs -n weknora -l app.kubernetes.io/component=frontend -f
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/Tencent/WeKnora/blob/main/CONTRIBUTING.md) in the main repository.
+See [CONTRIBUTING.md](https://github.com/Aiysae/shitu-ai-knowledge/blob/main/CONTRIBUTING.md) in the main repository.
 
 ## References
 
@@ -323,4 +324,4 @@ This Helm chart follows best practices from:
 
 ## License
 
-This chart is licensed under the MIT License - see the [LICENSE](https://github.com/Tencent/WeKnora/blob/main/LICENSE) file for details.
+This chart is licensed under the MIT License - see the [LICENSE](https://github.com/Aiysae/shitu-ai-knowledge/blob/main/LICENSE) file for details.

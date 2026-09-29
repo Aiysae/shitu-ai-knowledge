@@ -1,4 +1,4 @@
-# WeKnora MCP Server 可运行模组包 - 项目总结
+# 势途AI企业级知识库 MCP Server 可运行模组包 - 项目总结
 
 ## 🎉 项目完成状态
 

@@ -7,7 +7,7 @@ fixture="$(mktemp -d)"
 trap 'rm -rf "${fixture}"' EXIT
 mkdir -p "${fixture}/scripts" "${fixture}/bin" "${fixture}/licenses/sources"
 cp "${repo_root}/scripts/"{check-license-bundle,copy-licenses}.sh "${fixture}/scripts/"
-cp "${repo_root}/LICENSE" "${repo_root}/THIRD_PARTY_NOTICES.md" "${fixture}/"
+cp "${repo_root}/LICENSE" "${repo_root}/THIRD_PARTY_NOTICES.md" "${repo_root}/NOTICE" "${fixture}/"
 cp "${repo_root}/licenses/"*.txt "${fixture}/licenses/"
 touch "${fixture}/go.sum"
 
@@ -49,6 +49,7 @@ for pin in 'mysql v1.10.0' 'go-m1cpu v0.1.6'; do
     read -r name version <<< "${pin}"
     test -s "${fixture}/release with spaces/licenses/sources/${name}-${version}.zip"
 done
+cmp "${fixture}/NOTICE" "${fixture}/release with spaces/NOTICE"
 cmp "${fixture}/LICENSE" "${fixture}/release with spaces/LICENSE"
 cmp "${fixture}/THIRD_PARTY_NOTICES.md" "${fixture}/release with spaces/THIRD_PARTY_NOTICES.md"
 bash "${fixture}/scripts/check-license-bundle.sh" "${fixture}/release with spaces/licenses/sources"

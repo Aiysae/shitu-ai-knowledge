@@ -1,7 +1,7 @@
 # Copyright 2025 Tencent
 # SPDX-License-Identifier: MIT
 #
-# WeKnora Helm Chart Values
+# 势途AI企业级知识库 Helm Chart Values
 #
 # Best Practices References:
 # - https://helm.sh/docs/chart_best_practices/values/
@@ -64,7 +64,7 @@ app:
 
   image:
     # -- Image repository
-    repository: wechatopenai/weknora-app
+    repository: ghcr.io/aiysae/shitu-ai-app
     # -- Image tag (defaults to Chart.appVersion if empty)
     tag: ""
     # -- Image pull policy
@@ -90,7 +90,7 @@ app:
     allowPrivilegeEscalation: false
 
   # -- Environment variables for the app container
-  # Ref: https://github.com/Tencent/WeKnora/blob/main/docker-compose.yml
+  # Ref: https://github.com/Aiysae/shitu-ai-knowledge/blob/main/docker-compose.yml
   env:
     GIN_MODE: release
     # -- Retrieval driver: postgres, elasticsearch_v7, elasticsearch_v8, qdrant
@@ -158,9 +158,9 @@ frontend:
 
   image:
     # -- Image repository
-    repository: wechatopenai/weknora-ui
+    repository: ghcr.io/aiysae/shitu-ai-ui
     # -- Image tag
-    tag: latest
+    tag: "v0.1.0"
     # -- Image pull policy
     pullPolicy: IfNotPresent
 
@@ -205,9 +205,9 @@ docreader:
 
   image:
     # -- Image repository
-    repository: wechatopenai/weknora-docreader
+    repository: ghcr.io/aiysae/shitu-ai-docreader
     # -- Image tag
-    tag: latest
+    tag: "v0.1.0"
     # -- Image pull policy
     pullPolicy: IfNotPresent
 

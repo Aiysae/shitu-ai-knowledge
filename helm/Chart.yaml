@@ -1,16 +1,16 @@
 apiVersion: v2
 name: weknora
 description: |
-  WeKnora - AI-powered Knowledge RAG Platform for building intelligent knowledge bases
-  with document parsing, vector search, and LLM integration.
+  势途AI企业级知识库 — 由Vantage万极维护并开源。
+  Supports document parsing, hybrid retrieval and MCP integration.
 type: application
 version: 0.1.0
-appVersion: "v0.8.2"
+appVersion: "v0.1.0"
 kubeVersion: ">=1.25.0-0"
-home: https://github.com/Tencent/WeKnora
-icon: https://raw.githubusercontent.com/Tencent/WeKnora/main/docs/images/logo.png
+home: https://github.com/Aiysae/shitu-ai-knowledge
+icon: https://raw.githubusercontent.com/Aiysae/shitu-ai-knowledge/main/docs/images/logo.png
 sources:
-  - https://github.com/Tencent/WeKnora
+  - https://github.com/Aiysae/shitu-ai-knowledge
 keywords:
   - ai
   - rag
@@ -20,7 +20,7 @@ keywords:
   - vector-search
   - chatbot
 maintainers:
-  - name: WeKnora Community
-    url: https://github.com/Tencent/WeKnora
+  - name: Vantage万极
+    url: https://github.com/Aiysae/shitu-ai-knowledge
 annotations:
   artifacthub.io/license: MIT
