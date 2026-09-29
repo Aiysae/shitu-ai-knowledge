@@ -1,7 +1,20 @@
-use_default_settings: true
+use_default_settings:
+  engines:
+    keep_only:
+      - bing
+      - google
+      - brave
+
+engines:
+  - name: bing
+    disabled: false
+  - name: google
+    disabled: false
+  - name: brave
+    disabled: false
 
 general:
-  instance_name: "WeKnora SearXNG"
+  instance_name: "势途AI企业级知识库 SearXNG"
   privacypolicy_url: false
   donation_url: false
   contact_url: false

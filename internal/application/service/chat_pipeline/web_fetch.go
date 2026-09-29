@@ -44,9 +44,9 @@ func (p *PluginWebFetch) OnEvent(
 		topN = 3
 	}
 
-	// Find web search results in reranked results
+	// Rerank is optional; use the same candidates as the following merge stage.
 	var webResults []*types.SearchResult
-	for _, r := range chatManage.RerankResult {
+	for _, r := range selectInputResults(ctx, chatManage) {
 		if strings.ToLower(r.KnowledgeSource) == "web_search" {
 			webResults = append(webResults, r)
 			if len(webResults) >= topN {

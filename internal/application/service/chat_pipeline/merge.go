@@ -53,7 +53,7 @@ func (p *PluginMerge) OnEvent(ctx context.Context,
 	})
 
 	// Step 1: Select input
-	searchResult := p.selectInputResults(ctx, chatManage)
+	searchResult := selectInputResults(ctx, chatManage)
 
 	// Step 2: Initial dedup
 	searchResult = p.dedup(ctx, "dedup_summary", searchResult)
@@ -98,7 +98,7 @@ func (p *PluginMerge) OnEvent(ctx context.Context,
 
 // selectInputResults picks rerank results if available, falling back to search
 // results sorted by score descending.
-func (p *PluginMerge) selectInputResults(ctx context.Context, chatManage *types.ChatManage) []*types.SearchResult {
+func selectInputResults(ctx context.Context, chatManage *types.ChatManage) []*types.SearchResult {
 	if len(chatManage.RerankResult) > 0 {
 		return chatManage.RerankResult
 	}
