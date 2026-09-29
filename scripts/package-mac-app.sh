@@ -13,11 +13,11 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 cd "${ROOT_DIR}"
 
-APP_NAME="WeKnora Lite"
+APP_NAME="势途AI企业级知识库"
 APP_BUNDLE="${APP_NAME}.app"
 DIST_DIR="dist/${APP_BUNDLE}"
 
-echo "=== WeKnora Mac App Packager ==="
+echo "=== Shitu AI Mac App Packager ==="
 echo "  Output: dist/${APP_BUNDLE}"
 echo ""
 

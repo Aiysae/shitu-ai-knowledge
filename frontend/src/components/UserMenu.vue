@@ -197,6 +197,7 @@
 </template>
 
 <script setup lang="ts">
+import { BRAND } from '@/brand'
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUIStore } from '@/stores/ui'
@@ -493,13 +494,13 @@ const reopenGuide = () => {
 
 const openDocs = () => {
   menuVisible.value = false
-  window.open('https://github.com/Tencent/WeKnora/tree/main/website-docs', '_blank')
+  window.open(BRAND.docs, '_blank')
 }
 
 // 打开 GitHub
 const openGithub = () => {
   menuVisible.value = false
-  window.open('https://github.com/Tencent/WeKnora', '_blank')
+  window.open(BRAND.repository, '_blank')
 }
 
 // 注销

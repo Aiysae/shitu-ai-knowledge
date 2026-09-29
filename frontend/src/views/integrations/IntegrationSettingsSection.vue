@@ -7,7 +7,7 @@
           <p class="section-description">
             {{ $t('agentEditor.im.description') }}
             <a
-              href="https://github.com/Tencent/WeKnora/blob/main/website-docs/03-features/12-im-integration.md"
+              href="https://github.com/Aiysae/shitu-ai-knowledge/blob/main/website-docs/03-features/12-im-integration.md"
               target="_blank"
               rel="noopener noreferrer"
               class="doc-link"

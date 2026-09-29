@@ -1,10 +1,10 @@
-# 桌面客户端（WeKnora Lite Desktop）
+# 桌面客户端（势途AI企业级知识库 Lite Desktop）
 
 ::: warning 尚未正式发布
 桌面应用目前没有随 Release 提供安装包，需按[安装部署](../01-getting-started/02-installation.md)自行构建。
 :::
 
-WeKnora Lite 桌面应用基于 [Wails v2](https://wails.io)，在桌面进程中运行 Go 后端，使用 SQLite 和本地文件存储。启动后可管理知识库并进行检索问答，无需 Docker 或外部数据库。源码位于 `cmd/desktop/`，基础能力与[单二进制 Lite](../01-getting-started/02-installation.md)一致；桌面版另外提供免登录启动，以及在 macOS 上运行智能体命令的[本机沙箱](../03-features/22-skills-sandbox.md#lite-host)。
+势途AI企业级知识库 Lite 桌面应用基于 [Wails v2](https://wails.io)，在桌面进程中运行 Go 后端，使用 SQLite 和本地文件存储。启动后可管理知识库并进行检索问答，无需 Docker 或外部数据库。源码位于 `cmd/desktop/`，基础能力与[单二进制 Lite](../01-getting-started/02-installation.md)一致；桌面版另外提供免登录启动，以及在 macOS 上运行智能体命令的[本机沙箱](../03-features/22-skills-sandbox.md#lite-host)。
 
 ## 总体架构 {#_1-总体架构}
 

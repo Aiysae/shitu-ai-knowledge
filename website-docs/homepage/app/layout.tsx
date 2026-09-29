@@ -3,8 +3,8 @@ import "./globals.css";
 import { themeInitializationScript } from "./theme";
 
 export const metadata: Metadata = {
-  title: "WeKnora — 帮你找到答案，并将知识付诸实践",
-  description: "腾讯开源知识框架 WeKnora，集 RAG 问答、Agent 推理与自动 Wiki 于一体。v0.8.2 让智能体操作本机浏览器、以 MCP Server 对外提供知识库，并支持对话分叉与回滚；支持私有化部署。",
+  title: "势途AI企业级知识库",
+  description: "由Vantage万极维护并开源。汇集团队文档，支持知识问答、混合检索、Agent 和 MCP 接入，以及私有化部署。",
 };
 
 export default function RootLayout({

@@ -1,46 +1,7 @@
-# Security Policy
+# 安全问题报告
 
-## Reporting a Vulnerability
+势途AI企业级知识库由Vantage万极维护并开源。
 
-The WeKnora team takes security vulnerabilities seriously.  
-We appreciate your efforts to responsibly disclose any security issues you discover.
+通过本仓库 [Security Advisories](https://github.com/Aiysae/shitu-ai-knowledge/security/advisories/new) 的私密漏洞报告入口联系维护者。报告附上受影响版本、复现步骤与影响范围，凭证及业务资料请脱敏。
 
-⚠️ **Please do NOT report security vulnerabilities through public GitHub issues.**
-
-### Preferred reporting method
-
-We recommend reporting security vulnerabilities using GitHub’s private vulnerability reporting feature:
-
-1. Go to the **Security** tab of this repository
-2. Click **“Report a vulnerability”**
-3. Fill in the details and submit the report
-
-This allows us to discuss, investigate, and fix the issue privately.
-
-### Alternative contact
-
-If you are unable to use GitHub’s Security Advisory feature, you may contact the maintainers through the repository owners.
-
-> Please avoid sharing sensitive information publicly.
-
-### What to include in your report
-
-To help us understand and resolve the issue quickly, please include:
-
-- A clear description of the vulnerability
-- Steps to reproduce (proof-of-concept if available)
-- The affected version(s)
-- Potential impact and severity
-- Any suggested mitigations or fixes (if known)
-
-### Response timeline
-
-We aim to:
-- Acknowledge receipt of your report within **48 hours**
-- Provide a status update as the investigation progresses
-
-### Coordinated disclosure
-
-We kindly ask reporters to follow responsible disclosure practices and allow us reasonable time to address the issue before any public disclosure.
-
-Thank you for helping keep **WeKnora** and its users secure.
+普通功能问题使用 Issues。此项目首版不承诺固定响应时限；安全更新通过本仓库 Releases 发布。

@@ -2229,10 +2229,10 @@ const downloadExampleOptions = computed(() => [
 // 示例数据
 const exampleData: FAQEntryPayload[] = [
   {
-    standard_question: '什么是 WeKnora？',
-    answers: ['WeKnora 是一个智能知识库管理系统', '它支持多种知识库类型和导入方式'],
-    similar_questions: ['WeKnora 是什么？', '介绍一下 WeKnora'],
-    negative_questions: ['这不是 WeKnora', '与 WeKnora 无关'],
+    standard_question: '什么是势途AI企业级知识库？',
+    answers: ['势途AI企业级知识库支持文档管理与知识问答', '它支持多种知识库类型和导入方式'],
+    similar_questions: ['势途AI企业级知识库是什么？', '介绍一下势途AI企业级知识库'],
+    negative_questions: ['其他系统的介绍', '与势途AI企业级知识库无关'],
     tag_name: '产品介绍',
   },
   {

@@ -1,14 +1,14 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "WeKnora 知识库管理系统 API 文档",
-        "title": "WeKnora API",
+        "description": "势途AI企业级知识库 API 文档",
+        "title": "势途AI企业级知识库 API",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "WeKnora Github",
-            "url": "https://github.com/Tencent/WeKnora"
+            "name": "Vantage万极",
+            "url": "https://github.com/Aiysae/shitu-ai-knowledge"
         },
-        "version": "1.0"
+        "version": "0.1.0"
     },
     "basePath": "/api/v1",
     "paths": {

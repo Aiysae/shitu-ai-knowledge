@@ -20,8 +20,8 @@ import (
 	"github.com/Tencent/WeKnora/cli/cmd/doctor"
 	"github.com/Tencent/WeKnora/cli/cmd/kb"
 	linkcmd "github.com/Tencent/WeKnora/cli/cmd/link"
-	messagecmd "github.com/Tencent/WeKnora/cli/cmd/message"
 	mcpcmd "github.com/Tencent/WeKnora/cli/cmd/mcp"
+	messagecmd "github.com/Tencent/WeKnora/cli/cmd/message"
 	modelcmd "github.com/Tencent/WeKnora/cli/cmd/model"
 	profilecmd "github.com/Tencent/WeKnora/cli/cmd/profile"
 	"github.com/Tencent/WeKnora/cli/cmd/search"
@@ -135,8 +135,8 @@ func NewRootCmd(f *cmdutil.Factory) *cobra.Command {
 	v, commit, date := build.Info()
 	cmd := &cobra.Command{
 		Use:   "weknora",
-		Short: "WeKnora CLI",
-		Long: `Command-line client for the WeKnora RAG server. Manage knowledge bases
+		Short: "势途AI企业级知识库 CLI",
+		Long: `Command-line client for 势途AI企业级知识库. Manage knowledge bases
 and documents, run hybrid search, chat with grounded answers, or expose
 a curated read-only MCP tool surface for AI agents.`,
 		Example: `  weknora profile add prod --host=https://kb.example.com --use

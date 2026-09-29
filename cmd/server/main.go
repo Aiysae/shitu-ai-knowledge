@@ -1,13 +1,13 @@
 // Package main is the main package for the WeKnora server
 // It contains the main function and the entry point for the server
 //
-// @title           WeKnora API
-// @version         1.0
-// @description     WeKnora 知识库管理系统 API 文档
+// @title           势途AI企业级知识库 API
+// @version         0.1.0
+// @description     势途AI企业级知识库 API 文档
 // @termsOfService  http://swagger.io/terms/
 //
-// @contact.name   WeKnora Github
-// @contact.url    https://github.com/Tencent/WeKnora
+// @contact.name   Vantage万极
+// @contact.url    https://github.com/Aiysae/shitu-ai-knowledge
 //
 // @BasePath  /api/v1
 //

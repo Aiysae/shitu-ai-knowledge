@@ -156,4 +156,7 @@ RUN mkdir -p /tmp/docreader
 EXPOSE 50051
 
 # 直接运行 Python 服务（日志输出到 stdout/stderr）
+COPY LICENSE THIRD_PARTY_NOTICES.md NOTICE /usr/share/licenses/shitu-ai/
+COPY licenses/ /usr/share/licenses/shitu-ai/licenses/
+
 CMD ["uv", "run", "-m", "docreader.main"]

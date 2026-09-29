@@ -3,7 +3,7 @@
         <!-- 展开时：Logo + 搜索/折叠按钮同行 -->
         <div class="logo_row" v-if="!uiStore.sidebarCollapsed">
             <div class="logo_box" @click="router.push('/platform/knowledge-bases')" style="cursor: pointer;">
-                <img class="logo" src="@/assets/img/weknora.png" alt="">
+                <BrandLogo />
                 <sup v-if="isLiteEdition" class="lite-badge">Lite</sup>
             </div>
             <div class="logo_actions">
@@ -213,6 +213,7 @@
 </template>
 
 <script setup lang="ts">
+import BrandLogo from '@/components/BrandLogo.vue'
 import { storeToRefs } from 'pinia';
 import { onMounted, onUnmounted, watch, computed, ref, h, nextTick } from 'vue';
 import { useRoute, useRouter } from 'vue-router';

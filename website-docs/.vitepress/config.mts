@@ -68,13 +68,13 @@ function tokenize(text: string): string[] {
   return tokens
 }
 
-const repo = 'https://github.com/Tencent/WeKnora'
+const repo = 'https://github.com/Aiysae/shitu-ai-knowledge'
 
 export default withMermaid(
   defineConfig({
-    title: 'WeKnora',
-    titleTemplate: ':title · WeKnora 文档',
-    description: 'WeKnora（维娜拉）官方文档：部署、配置、功能说明、API 参考与二次开发',
+    title: '势途AI企业级知识库',
+    titleTemplate: ':title · 势途AI企业级知识库 文档',
+    description: '势途AI企业级知识库文档：部署、配置、功能说明与 API 参考',
     lang: 'zh-CN',
     base: '/docs/',
     cleanUrls: true,
@@ -88,10 +88,10 @@ export default withMermaid(
     },
 
     head: [
-      ['link', { rel: 'icon', href: '/docs/favicon.ico', type: 'image/x-icon' }],
+      ['link', { rel: 'icon', href: '/docs/shitu-mark.svg', type: 'image/svg+xml' }],
       ['meta', { name: 'theme-color', content: '#101f38' }],
       ['meta', { property: 'og:type', content: 'website' }],
-      ['meta', { property: 'og:title', content: 'WeKnora 文档' }],
+      ['meta', { property: 'og:title', content: '势途AI企业级知识库 文档' }],
       [
         'meta',
         {
@@ -116,7 +116,7 @@ export default withMermaid(
 
     themeConfig: {
       logoLink: { link: '/', target: '_self' },
-      siteTitle: 'WeKnora',
+      siteTitle: '势途AI企业级知识库',
 
       nav: [],
 
@@ -174,8 +174,8 @@ export default withMermaid(
       },
 
       footer: {
-        message: `基于 WeKnora ${repoVersionLabel} 源码整理 · MIT License`,
-        copyright: '© Tencent WeKnora',
+        message: '由Vantage万极维护并开源 · MIT License',
+        copyright: '由Vantage万极维护并开源',
       },
     },
 

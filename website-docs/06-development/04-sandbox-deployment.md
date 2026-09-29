@@ -88,7 +88,7 @@ Cube guest DNS 属于模板配置。更改 DNS/镜像后需重建模板才会进
 浏览器 noVNC → WeKnora 票据中继 → 提供商网关 → websockify :6080 → 本机 x11vnc :5900
 ```
 
-浏览器不持有沙箱 API Key、入站 token 或 websockify 密码。桌面票据仅可消费一次，完整定义见[会话 API](../04-api/02-api-chat.md#sandbox-desktop)。Cube 桌面模板的 `exposedPorts` 只暴露 envd 的 49983，**不要把 6080 加入宿主机 NAT**，桌面必须经过网关与 WeKnora 中继。
+浏览器不持有沙箱 API Key、入站 token 或 websockify 密码。桌面票据仅可消费一次，完整定义见[会话 API](../04-api/02-api-chat.md#sandbox-desktop)。Cube 桌面模板的 `exposedPorts` 只暴露 envd 的 49983，**不要把 6080 加入宿主机 NAT**，桌面必须经过网关与 势途AI企业级知识库 中继。
 
 每个会话同时只允许一条桌面中继，多副本槽位由 Redis 协调。沙箱重建后以 `SANDBOX_REBUILT` 提醒断开，不能把新桌面当成保留了原临时文件的旧实例。空闲判断使用 RFB 键鼠活动，截图请求不算用户操作。
 

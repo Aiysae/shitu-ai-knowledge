@@ -11,8 +11,8 @@ const docTemplate = `{
         "title": "{{.Title}}",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "WeKnora Github",
-            "url": "https://github.com/Tencent/WeKnora"
+            "name": "Vantage万极",
+            "url": "https://github.com/Aiysae/shitu-ai-knowledge"
         },
         "version": "{{.Version}}"
     },
@@ -26456,8 +26456,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "",
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
-	Title:            "WeKnora API",
-	Description:      "WeKnora 知识库管理系统 API 文档",
+	Title:            "势途AI企业级知识库 API",
+	Description:      "势途AI企业级知识库 API 文档",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

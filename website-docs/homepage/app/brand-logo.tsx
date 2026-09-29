@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-/** Show the complete original artwork; the viewport only trims blank canvas. */
 export function BrandLogo({ priority = false }: { priority?: boolean }) {
-  return <span className="wk-logo"><Image src="/brand/weknora-original.png" alt="WeKnora" width={945} height={650} priority={priority} /></span>;
+  return <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}><Image src="/brand/shitu-mark.svg" alt="势途" width={34} height={34} priority={priority} /><strong style={{ fontSize: 16 }}>势途AI企业级知识库</strong></span>;
 }

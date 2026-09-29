@@ -21,7 +21,7 @@ export function Header() {
   const menu = useRef<HTMLButtonElement>(null);
   return <header className="wk-header" onKeyDown={event => { if (event.key === "Escape" && open) { setOpen(false); menu.current?.focus(); } }}>
     <div className="wk-header-inner">
-      <Link className="wk-brand" href="/" aria-label="WeKnora 首页"><BrandLogo priority /></Link>
+      <Link className="wk-brand" href="/" aria-label="势途AI企业级知识库首页"><BrandLogo priority /></Link>
       <nav id="main-navigation" className={`wk-navigation ${open ? "is-open" : ""}`} aria-label="主导航" onClick={() => setOpen(false)}>
         {siteNavigation.map(item => <a key={item.href} href={item.href}>{item.label}{item.badge && <span className="wk-new-label">{item.badge}</span>}</a>)}
         <a className="wk-mobile-github" href={repositoryUrl} target="_blank" rel="noreferrer">GitHub <HeaderIcon name="external" /></a>

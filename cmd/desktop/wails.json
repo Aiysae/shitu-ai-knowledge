@@ -1,20 +1,20 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
-  "name": "WeKnora Lite",
-  "outputfilename": "WeKnora Lite",
+  "name": "势途AI企业级知识库",
+  "outputfilename": "势途AI企业级知识库",
   "frontend:dir": "../../frontend",
   "wailsjsdir": "../../frontend/src",
   "build:tags": "desktop",
   "author": {
-    "name": "WeKnora Team",
+    "name": "Vantage万极",
     "email": ""
   },
   "info": {
-    "companyName": "Tencent",
-    "productName": "WeKnora Lite",
-    "productVersion": "1.0.0",
-    "copyright": "Copyright 2026 Tencent",
-    "comments": "WeKnora Desktop Edition"
+    "companyName": "Vantage万极",
+    "productName": "势途AI企业级知识库",
+    "productVersion": "0.1.0",
+    "copyright": "Copyright 2026 杭州势途数字科技有限公司; original notices in LICENSE",
+    "comments": "由Vantage万极维护并开源"
   },
   "mac": {
     "category": "public.app-category.productivity",

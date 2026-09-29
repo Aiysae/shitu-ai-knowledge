@@ -1,11 +1,11 @@
 # MCP（Model Context Protocol）集成
 
-MCP 用于智能体与外部工具之间的连接。WeKnora 支持接入外部 MCP 服务，也提供独立 MCP Server 供其他客户端调用：
+MCP 用于智能体与外部工具之间的连接。势途AI企业级知识库 支持接入外部 MCP 服务，也提供独立 MCP Server 供其他客户端调用：
 
-1. **WeKnora 作为 MCP 客户端**：在「工具箱 → MCP服务」中接入任意外部 MCP server（SSE / Streamable HTTP），其工具通过目录按需加载，供 Agent 在对话中调用。支持 API Key / Bearer / OAuth 2.0（含动态客户端注册与 PKCE）三种认证策略、按工具粒度的启停与人工审批，以及会话内（in-conversation）OAuth 授权。
-2. **WeKnora 作为 MCP Server**：在「设置 → 发布集成 → MCP Server」中为当前空间创建一个或多个 MCP 端点，每个端点有独立的令牌、知识库范围和工具清单，Claude Desktop、Cursor、Claude Code、VS Code Copilot 等 MCP 客户端通过 Streamable HTTP 直接连接，无需额外部署进程。仓库 `mcp-server/` 目录下的 Python 服务是旧方案，已标记弃用。
+1. **势途AI企业级知识库 作为 MCP 客户端**：在「工具箱 → MCP服务」中接入任意外部 MCP server（SSE / Streamable HTTP），其工具通过目录按需加载，供 Agent 在对话中调用。支持 API Key / Bearer / OAuth 2.0（含动态客户端注册与 PKCE）三种认证策略、按工具粒度的启停与人工审批，以及会话内（in-conversation）OAuth 授权。
+2. **势途AI企业级知识库 作为 MCP Server**：在「设置 → 发布集成 → MCP Server」中为当前空间创建一个或多个 MCP 端点，每个端点有独立的令牌、知识库范围和工具清单，Claude Desktop、Cursor、Claude Code、VS Code Copilot 等 MCP 客户端通过 Streamable HTTP 直接连接，无需额外部署进程。仓库 `mcp-server/` 目录下的 Python 服务是旧方案，已标记弃用。
 
-接入外部服务可扩展 WeKnora 智能体的工具；运行 WeKnora MCP Server 可让外部客户端使用知识库检索、问答和管理能力。
+接入外部服务可扩展 势途AI企业级知识库 智能体的工具；运行 势途AI企业级知识库 MCP Server 可让外部客户端使用知识库检索、问答和管理能力。
 
 空间 Admin 在侧边栏「工具箱 → MCP服务」新建服务（旧的「设置 → MCP 服务」链接会自动跳转到这里），填好连接后同步工具并写使用说明，再在智能体中选择所需服务。需要控制写入或外发操作时，可为相应工具开启人工审批，调用前会显示确认卡片。
 
@@ -25,13 +25,13 @@ MCP 用于智能体与外部工具之间的连接。WeKnora 支持接入外部 M
 1. **连接配置**：填写名称和服务 URL，选择 SSE 或 Streamable HTTP 传输，并配置认证（无 / 自定义 Header、API Key / Token、OAuth 2.0）和超时、重试。也可以用「从代码导入」粘贴标准 `mcpServers` JSON 自动填表；只含 `command` / `args` 的 stdio 配置不支持。保存后可测试连接；OAuth 服务点「去授权」时会先自动保存，再按当前用户发起授权。
 2. **工具与用途说明**：连接并拉取 Tools，系统会保存完整的工具描述和参数定义；再填写「使用说明」，说明服务用途、适用场景和关键约束。已同步工具后可点「AI 生成」，根据已启用的工具生成一段精简说明，检查后保存。工具列表中可逐个设置「启用工具」和「调用需审批」，修改即时生效，刷新目录不会覆盖这些设置。
 
-模型先读取服务的使用说明，再按需加载具体工具，所以使用说明直接影响 Agent 能否选对服务。OAuth 服务按调用者分别授权。工具需要审批时，在对话中检查参数并确认；单独停用某个工具后，运行时不会执行该工具。WeKnora 的 MCP 客户端不支持 stdio 传输。
+模型先读取服务的使用说明，再按需加载具体工具，所以使用说明直接影响 Agent 能否选对服务。OAuth 服务按调用者分别授权。工具需要审批时，在对话中检查参数并确认；单独停用某个工具后，运行时不会执行该工具。势途AI企业级知识库 的 MCP 客户端不支持 stdio 传输。
 
 ## 供外部客户端调用
 
 在「设置 → 发布集成 → MCP Server」新建端点：填写名称、选择可访问的知识库（留空为全部）、勾选要暴露的工具，并按需指定 `ask` 使用的默认 Agent（留空时使用内置快速问答）和每分钟调用上限（默认 60 次）。创建后会一次性展示令牌和地址 `/mcp/<endpoint_id>`，页面同时给出 Cursor / VS Code / Claude Desktop 的 `mcpServers` 配置、Claude Code 的一行命令，以及仅支持 stdio 的客户端通过 `mcp-remote` 桥接的写法。
 
-使用自定义反向代理时，除 `/api/` 外，还需将 `/mcp/` 原路径转发到 WeKnora 后端，保留 `Authorization` 和 MCP 协议头，并关闭响应缓冲、为长连接设置足够的读写超时。仓库自带的 Nginx、Vite 开发及预览配置已包含该代理，可直接使用网站域名连接，无需另行暴露后端 8080 端口。
+使用自定义反向代理时，除 `/api/` 外，还需将 `/mcp/` 原路径转发到 势途AI企业级知识库 后端，保留 `Authorization` 和 MCP 协议头，并关闭响应缓冲、为长连接设置足够的读写超时。仓库自带的 Nginx、Vite 开发及预览配置已包含该代理，可直接使用网站域名连接，无需另行暴露后端 8080 端口。
 
 <Screenshot
   src="/screenshots/mcp-server-endpoint.png"
@@ -61,14 +61,14 @@ MCP 用于智能体与外部工具之间的连接。WeKnora 支持接入外部 M
 
 ## 接入方式对照 {#两个方向的对照速览}
 
-| 维度 | WeKnora 作为 MCP 客户端 | WeKnora 作为 MCP Server |
+| 维度 | 势途AI企业级知识库 作为 MCP 客户端 | 势途AI企业级知识库 作为 MCP Server |
 |---|---|---|
 | 代码位置 | `internal/mcp/` + handler/service/repository + `internal/agent/tools/` | `internal/mcpserver/` + `internal/middleware/mcp_endpoint_auth.go` + `internal/handler/mcp_endpoint.go` |
 | 协议库 | `github.com/mark3labs/mcp-go`（client） | `github.com/mark3labs/mcp-go`（server，Streamable HTTP，无状态模式） |
 | 传输 | SSE、Streamable HTTP（stdio 因安全禁用） | Streamable HTTP；stdio 客户端用 `mcp-remote` 桥接 |
 | 认证 | API Key / Bearer / OAuth 2.0（DCR + PKCE，token AES 加密、按 principal 隔离） | 入站 `Authorization: Bearer mcp_…`，每个端点独立令牌（SHA-256 存储，可轮换） |
 | 安全控制 | 工具级人工审批、SSRF 校验、不可信输出前缀、DTO 级密钥隔离 | 端点级工具白名单（列表与调用双重校验）、知识库范围、每分钟限流、令牌只展示一次 |
-| 消费者 | WeKnora Agent（对话中自动调用） | Claude Desktop / Cursor / Claude Code / VS Code Copilot 等任意 MCP 客户端 |
+| 消费者 | 势途AI企业级知识库 Agent（对话中自动调用） | Claude Desktop / Cursor / Claude Code / VS Code Copilot 等任意 MCP 客户端 |
 
 ## 配置与实现参考
 
@@ -228,7 +228,7 @@ PUT body 中字段为指针语义：**缺省 = 保留原值**，**空字符串 =
 
 #### OAuth 2.0 授权全流程 {#_1-6-oauth-2-0-授权全流程}
 
-当 MCP server 要求 OAuth（`auth_type: "oauth"`）时，WeKnora 实现了完整的授权码流程：**RFC 9728 / RFC 8414 发现 → RFC 7591 动态客户端注册 → Authorization Code + PKCE → token 加密持久化 → 带分布式租约的自动刷新**。token 按 `(tenant_id, principal_type, principal_id, service_id)` 维度隔离——同一服务，每个用户（或 embed 访客、IM 用户等 principal，见 `internal/types/principal.go`）都持有自己的 token。
+当 MCP server 要求 OAuth（`auth_type: "oauth"`）时，势途AI企业级知识库 实现了完整的授权码流程：**RFC 9728 / RFC 8414 发现 → RFC 7591 动态客户端注册 → Authorization Code + PKCE → token 加密持久化 → 带分布式租约的自动刷新**。token 按 `(tenant_id, principal_type, principal_id, service_id)` 维度隔离——同一服务，每个用户（或 embed 访客、IM 用户等 principal，见 `internal/types/principal.go`）都持有自己的 token。
 
 ##### 授权时序
 
@@ -283,7 +283,7 @@ sequenceDiagram
 `internal/mcp/oauth_tokenstore.go` 提供两层 TokenStore：
 
 - `dbTokenStore`：实现 mcp-go 的 `transport.TokenStore`，授权/刷新成功后由 mcp-go 回调 `SaveToken` 落库（缺省 `TokenType` 补 `Bearer`，`ExpiresIn` 换算成 `ExpiresAt`）。
-- `managedTokenStore`：运行时传输实际使用的包装——**`GetToken` 抹掉 `ExpiresAt`**，让 mcp-go 永远认为 token 未过期，从而禁用依赖库自身的自动刷新；刷新决策完全收归 WeKnora 的协调生命周期（否则会绕过跨实例租约，并把刷新失败折叠成笼统的 authorization-required）。
+- `managedTokenStore`：运行时传输实际使用的包装——**`GetToken` 抹掉 `ExpiresAt`**，让 mcp-go 永远认为 token 未过期，从而禁用依赖库自身的自动刷新；刷新决策完全收归 势途AI企业级知识库 的协调生命周期（否则会绕过跨实例租约，并把刷新失败折叠成笼统的 authorization-required）。
 
 ##### Token 刷新与跨实例租约（oauth_lifecycle.go）
 
@@ -473,10 +473,10 @@ claude mcp add --transport http weknora-docs https://your-weknora.example.com/mc
 :::
 
 
-`mcp-server/` 是一个独立的 Python 包，PyPI 名 **`tencent-weknora-mcp`**（当前 1.1.1，Python ≥ 3.10，依赖 `mcp>=2,<3`、`requests>=2.31.0`、`starlette`、`uvicorn`），核心实现在 `mcp-server/weknora_mcp_server.py`：`WeKnoraClient` 用 `requests.Session` 携带 `X-API-Key` 调 WeKnora REST API，`MCPServer("weknora-server", version="1.1.1")` 注册工具并通过所选传输对外服务。
+`mcp-server/` 是一个独立的 Python 包，PyPI 名 **`tencent-weknora-mcp`**（当前 1.1.1，Python ≥ 3.10，依赖 `mcp>=2,<3`、`requests>=2.31.0`、`starlette`、`uvicorn`），核心实现在 `mcp-server/weknora_mcp_server.py`：`WeKnoraClient` 用 `requests.Session` 携带 `X-API-Key` 调 势途AI企业级知识库 REST API，`MCPServer("weknora-server", version="1.1.1")` 注册工具并通过所选传输对外服务。
 
 ::: warning 包名与 API 变更（v1.1.x）
-- 官方包名是 `tencent-weknora-mcp`（由 Tencent/WeKnora 通过 Trusted Publishing 发布）；社区早期的 `weknora-mcp` 已不再使用。命令行入口仍是 `weknora-mcp-server` / `weknora-server`。
+- 官方包名是 `tencent-weknora-mcp`（由 Tencent/势途AI企业级知识库 通过 Trusted Publishing 发布）；社区早期的 `weknora-mcp` 已不再使用。命令行入口仍是 `weknora-mcp-server` / `weknora-server`。
 - 实现已迁移到 mcp 2.x 的高层 API：工具是加了 `@mcp.tool()` 装饰器的普通函数，入参 JSON Schema 由类型标注自动推导，描述取自 docstring，返回值自动序列化。旧的 `handle_list_tools()` / `handle_call_tool()` 分发写法已移除——扩展工具时只需新增一个带装饰器的函数。
 - 阻塞式网络 I/O（`chat` / `agent_chat`）被投递到线程池执行，不阻塞 asyncio 事件循环。
 :::
@@ -535,7 +535,7 @@ stdio 传输把 stdout 当作协议通道，任何多余的 `print` 都会污染
 
 | 环境变量 | 默认值 | 说明 |
 |---|---|---|
-| `WEKNORA_BASE_URL` | `http://localhost:8080/api/v1` | WeKnora API 基础 URL |
+| `WEKNORA_BASE_URL` | `http://localhost:8080/api/v1` | 势途AI企业级知识库 API 基础 URL |
 | `WEKNORA_API_KEY` | 空 | 租户 API Key，以 `X-API-Key` header 发送 |
 | `WEKNORA_CHAT_TIMEOUT` | `300` | chat / agent_chat 的 SSE 读超时（秒），非法值回退 300 |
 | `WEKNORA_VERIFY_SSL` | `true` | 设为 `false` 关闭 SSL 证书校验（仅限自签名证书的开发环境） |
@@ -674,7 +674,7 @@ stdio 传输（Claude Desktop 的 `claude_desktop_config.json`）：
 
 远程部署（Docker / `--transport http`）时，客户端连接 `http://<host>:8000/mcp` 并携带 `Authorization: Bearer <MCP_SERVER_AUTH_TOKEN>`。
 
-顺带一提：WeKnora 主程序（第一部分）也可以作为 MCP 客户端接入这个 mcp-server——在「工具箱 → MCP服务」中新建 Streamable HTTP 服务指向 `/mcp` 端点，认证方式选「API Key / Token」，请求头名称填 `Authorization`，密钥值填 `Bearer <MCP_SERVER_AUTH_TOKEN>` 即可，从而让 WeKnora Agent 操作另一套 WeKnora 实例。
+顺带一提：势途AI企业级知识库 主程序（第一部分）也可以作为 MCP 客户端接入这个 mcp-server——在「工具箱 → MCP服务」中新建 Streamable HTTP 服务指向 `/mcp` 端点，认证方式选「API Key / Token」，请求头名称填 `Authorization`，密钥值填 `Bearer <MCP_SERVER_AUTH_TOKEN>` 即可，从而让 势途AI企业级知识库 Agent 操作另一套 势途AI企业级知识库 实例。
 
 #### 文件上传路径安全（upload_paths.py） {#_2-6-文件上传路径安全-upload-paths-py}
 

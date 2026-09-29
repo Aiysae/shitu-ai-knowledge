@@ -24,6 +24,6 @@ done < "${license_root}/licenses/sources/modules.tsv"
 bash "${license_root}/scripts/check-license-bundle.sh" "${source_stage}"
 
 mkdir -p "${license_dest}/licenses"
-cp "${license_root}/LICENSE" "${license_root}/THIRD_PARTY_NOTICES.md" "${license_dest}/"
+cp "${license_root}/LICENSE" "${license_root}/THIRD_PARTY_NOTICES.md" "${license_root}/NOTICE" "${license_dest}/"
 cp -R "${license_root}/licenses/." "${license_dest}/licenses/"
 cp "${source_stage}/"*.zip "${license_dest}/licenses/sources/"

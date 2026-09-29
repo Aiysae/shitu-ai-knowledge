@@ -8,7 +8,7 @@
 #
 #   docker build --platform linux/amd64 \
 #     --build-arg VITE_FRONTEND_COMMIT=$(git rev-parse --short HEAD) \
-#     -t wechatopenai/weknora-ui:latest \
+#     -t ghcr.io/aiysae/shitu-ai-ui:latest \
 #     frontend/
 #
 # Optional npm mirror (e.g. corporate registry):
@@ -59,6 +59,8 @@ RUN npm run build
 FROM nginx:1.30.3-alpine@sha256:0d3b80406a13a767339fbe2f41406d6c7da727ab89cf8fae399e81f780f814d1
 
 COPY --from=builder /frontend/dist /usr/share/nginx/html
+COPY LICENSE THIRD_PARTY_NOTICES.md NOTICE /usr/share/licenses/shitu-ai/
+COPY licenses/ /usr/share/licenses/shitu-ai/licenses/
 
 COPY nginx.conf /etc/nginx/templates/default.conf.template
 

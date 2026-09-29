@@ -1,6 +1,6 @@
 # Web 前端（frontend/）
 
-WeKnora 的 Web 前端是一个基于 **Vue 3 + TypeScript + Vite** 的单页应用（SPA），承载知识库管理、Agent 对话、组织协作、系统设置等全部交互界面。同一份代码同时服务三种形态：
+势途AI企业级知识库 的 Web 前端是一个基于 **Vue 3 + TypeScript + Vite** 的单页应用（SPA），承载知识库管理、Agent 对话、组织协作、系统设置等全部交互界面。同一份代码同时服务三种形态：
 
 1. **标准 Web 部署**：Vite 构建产物由 nginx 容器托管，`/api` 反向代理到后端；
 2. **网页嵌入（Embed）**：独立的轻量入口 `frontend/embed.html` + `frontend/src/embed-main.ts`，供第三方网站以 iframe / 浮窗方式嵌入智能体对话；

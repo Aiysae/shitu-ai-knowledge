@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: WeKnora Documentation
-    url: https://github.com/Tencent/WeKnora/blob/main/website-docs/01-getting-started/05-troubleshooting.md
-    about: Check WeKnora FAQ
+  - name: 势途AI企业级知识库 Documentation
+    url: https://github.com/Aiysae/shitu-ai-knowledge/blob/main/website-docs/01-getting-started/05-troubleshooting.md
+    about: Check 势途AI企业级知识库 FAQ
   - name: Discussions
-    url: https://github.com/Tencent/WeKnora/discussions
+    url: https://github.com/Aiysae/shitu-ai-knowledge/discussions
     about: Ask questions or share ideas in Discussions
