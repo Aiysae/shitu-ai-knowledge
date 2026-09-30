@@ -122,7 +122,7 @@
               @click="formData.transport_type = 'http-streamable'"
             >
               <t-icon name="link" class="source-option__icon" />
-              <span class="source-option__label">HTTP Streamable</span>
+              <span class="source-option__label">可流式 HTTP（Streamable HTTP）</span>
             </button>
           </div>
         </div>

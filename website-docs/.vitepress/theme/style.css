@@ -2,8 +2,8 @@
 @import '../../shared/header.css';
 
 /* ==========================================================================
-   WeKnora 文档站主题
-   墨蓝（logo 主色）· 纸白 · 鎏金（帆浪点缀）
+   势途AI企业级知识库文档站主题
+   石墨黑 · 暖白 · 暖金
    ========================================================================== */
 
 :root {
@@ -14,9 +14,9 @@
   --vp-font-family-mono: var(--wk-font-mono);
 
   --vp-c-brand-1: var(--wk-ink);
-  --vp-c-brand-2: #24395a;
+  --vp-c-brand-2: #69431b;
   --vp-c-brand-3: var(--wk-gold);
-  --vp-c-brand-soft: rgba(184, 134, 59, 0.14);
+  --vp-c-brand-soft: rgba(155, 103, 43, 0.14);
 
   --vp-c-bg: var(--wk-paper);
   --vp-c-bg-alt: var(--wk-paper-2);
@@ -46,11 +46,11 @@
 
 .dark {
 
-  --vp-c-brand-1: #e6ecf5;
-  --vp-c-brand-2: #c3d0e2;
+  --vp-c-brand-1: #f5f1e9;
+  --vp-c-brand-2: #e8c78d;
   --vp-c-brand-3: var(--wk-gold);
-  --vp-c-bg-elv: #101a2b;
-  --vp-code-block-bg: #0d1626;
+  --vp-c-bg-elv: #1a1b1f;
+  --vp-code-block-bg: #141417;
 }
 
 html {

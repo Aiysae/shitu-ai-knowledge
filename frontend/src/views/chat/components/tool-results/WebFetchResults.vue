@@ -39,7 +39,7 @@
         <div class="result-content" :class="{ expanded: isExpanded(index) }">
           <div class="info-section">
             <div class="info-field">
-              <span class="field-label">URL</span>
+              <span class="field-label">网址</span>
               <span class="field-value">
                 <a
                   v-if="item.url"

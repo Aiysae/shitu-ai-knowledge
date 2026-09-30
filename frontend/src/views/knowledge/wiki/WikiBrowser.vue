@@ -81,7 +81,7 @@
           </div>
           <div class="legend-divider"></div>
           <div class="legend-actions">
-            <div class="legend-action" @click="fitGraphToView" title="Fit to View">
+            <div class="legend-action" @click="fitGraphToView" title="适应视图">
               <span class="legend-action-icon"><t-icon name="focus" /></span>
               <span>{{ $t('knowledgeEditor.wikiBrowser.fitView') || '适应屏幕' }}</span>
             </div>

@@ -158,7 +158,7 @@
         <section class="setting-drawer__section">
           <h4 class="setting-drawer__section-title">{{ t('settings.storageBackend.connectionSection') }}</h4>
           <div v-if="needsEndpoint" class="form-item">
-            <label class="form-label required">Endpoint</label>
+            <label class="form-label required">服务地址</label>
             <t-input
               v-model="form.config.endpoint"
               :disabled="!!editing"
@@ -167,29 +167,29 @@
             />
           </div>
           <div v-if="needsRegion" class="form-item">
-            <label class="form-label required">Region</label>
+            <label class="form-label required">区域</label>
             <t-input v-model="form.config.region" :disabled="!!editing" clearable />
           </div>
           <template v-if="needsCredentials">
             <div class="form-item">
-              <label class="form-label required">Access Key / Secret ID</label>
+              <label class="form-label required">访问密钥 / 密钥编号</label>
               <t-input v-model="form.config.access_key_id" placeholder="***" clearable>
                 <template #prefix-icon><t-icon name="lock-on" /></template>
               </t-input>
             </div>
             <div class="form-item">
-              <label class="form-label required">Secret Key</label>
+              <label class="form-label required">密钥</label>
               <t-input v-model="form.config.secret_access_key" type="password" placeholder="***" clearable>
                 <template #prefix-icon><t-icon name="lock-on" /></template>
               </t-input>
             </div>
           </template>
           <div v-if="form.provider !== 'local'" class="form-item">
-            <label class="form-label required">Bucket</label>
+            <label class="form-label required">存储桶</label>
             <t-input v-model="form.config.bucket_name" :disabled="!!editing" clearable />
           </div>
           <div v-if="form.provider === 'cos'" class="form-item">
-            <label class="form-label">App ID</label>
+            <label class="form-label">应用编号</label>
             <t-input v-model="form.config.app_id" :disabled="!!editing" :placeholder="t('settings.storageBackend.optionalPlaceholder')" clearable />
           </div>
         </section>

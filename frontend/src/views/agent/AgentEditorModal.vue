@@ -1500,8 +1500,8 @@
                         <t-icon :name="kb.type === 'faq' ? 'chat-bubble-help' : 'folder'" />
                       </span>
                       <span class="kb-option-label">{{ kb.label }}</span>
-                      <span v-if="kb.ragEnabled" class="kb-option-tag tag-rag">RAG</span>
-                      <span v-if="kb.wikiEnabled" class="kb-option-tag tag-wiki">Wiki</span>
+                      <span v-if="kb.ragEnabled" class="kb-option-tag tag-rag">检索问答</span>
+                      <span v-if="kb.wikiEnabled" class="kb-option-tag tag-wiki">知识页面</span>
                       <span class="kb-option-count">{{ kb.count || 0 }}</span>
                       <span v-if="kb.disabled" class="kb-option-disabled-hint">{{ kb.disabledReason }}</span>
                     </div>
@@ -1516,8 +1516,8 @@
                         <t-icon :name="kb.type === 'faq' ? 'chat-bubble-help' : 'folder'" />
                       </span>
                       <span class="kb-option-label">{{ kb.label }}</span>
-                      <span v-if="kb.ragEnabled" class="kb-option-tag tag-rag">RAG</span>
-                      <span v-if="kb.wikiEnabled" class="kb-option-tag tag-wiki">Wiki</span>
+                      <span v-if="kb.ragEnabled" class="kb-option-tag tag-rag">检索问答</span>
+                      <span v-if="kb.wikiEnabled" class="kb-option-tag tag-wiki">知识页面</span>
                       <span v-if="kb.orgName" class="kb-option-org">{{ kb.orgName }}</span>
                       <span class="kb-option-count">{{ kb.count || 0 }}</span>
                       <span v-if="kb.disabled" class="kb-option-disabled-hint">{{ kb.disabledReason }}</span>

@@ -45,9 +45,9 @@ const emojiChar = computed(() => {
   return v.slice(6).trim() || '';
 });
 
-// 预定义渐变色（与项目绿色主色协调，偏空间/协作感）
+// 预定义渐变色，首项使用产品品牌色
 const gradients = [
-  { from: '#07c05f', to: '#059669' },  // 主绿
+  { from: '#80521f', to: '#ddb674' },  // 万极暖金
   { from: '#11998e', to: '#38ef7d' },  // 深绿渐变
   { from: '#43e97b', to: '#38f9d7' },  // 绿青
   { from: '#02aab0', to: '#00cdac' },  // 青绿

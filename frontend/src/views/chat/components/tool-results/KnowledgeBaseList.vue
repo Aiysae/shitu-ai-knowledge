@@ -17,7 +17,7 @@
           </div>
           <div class="kb-body">
             <div class="info-field">
-              <span class="field-label">ID:</span>
+              <span class="field-label">编号：</span>
               <span class="field-value"><code>{{ kb.id }}</code></span>
             </div>
             <div v-if="kb.description" class="kb-description">

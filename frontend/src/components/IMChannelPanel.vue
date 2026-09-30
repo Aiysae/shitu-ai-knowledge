@@ -260,43 +260,43 @@
               </div>
               <template v-if="formData.mode === 'websocket'">
                 <div class="form-item">
-                  <label class="form-label">Bot ID</label>
-                  <t-input v-model="formData.credentials.bot_id" placeholder="Bot ID" />
+                  <label class="form-label">{{ $t('agentEditor.im.fields.botId') }}</label>
+                  <t-input v-model="formData.credentials.bot_id" :placeholder="$t('agentEditor.im.fields.botId')" />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">Bot Secret</label>
-                  <t-input v-model="formData.credentials.bot_secret" type="password" placeholder="Bot Secret" />
+                  <label class="form-label">{{ $t('agentEditor.im.fields.botSecret') }}</label>
+                  <t-input v-model="formData.credentials.bot_secret" type="password" :placeholder="$t('agentEditor.im.fields.botSecret')" />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">WebSocket Endpoint</label>
+                  <label class="form-label">{{ $t('agentEditor.im.fields.wsEndpoint') }}</label>
                   <t-input v-model="formData.credentials.ws_endpoint" placeholder="wss://openws.work.weixin.qq.com" />
                   <p class="form-desc">{{ $t('agentEditor.im.wecomWSEndpointHint') }}</p>
                 </div>
               </template>
               <template v-else>
                 <div class="form-item">
-                  <label class="form-label">Corp ID</label>
-                  <t-input v-model="formData.credentials.corp_id" placeholder="Corp ID" />
+                  <label class="form-label">{{ $t('agentEditor.im.fields.corpId') }}</label>
+                  <t-input v-model="formData.credentials.corp_id" :placeholder="$t('agentEditor.im.fields.corpId')" />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">Agent Secret</label>
-                  <t-input v-model="formData.credentials.agent_secret" type="password" placeholder="Agent Secret" />
+                  <label class="form-label">{{ $t('agentEditor.im.fields.agentSecret') }}</label>
+                  <t-input v-model="formData.credentials.agent_secret" type="password" :placeholder="$t('agentEditor.im.fields.agentSecret')" />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">Token</label>
-                  <t-input v-model="formData.credentials.token" placeholder="Token" />
+                  <label class="form-label">{{ $t('agentEditor.im.fields.token') }}</label>
+                  <t-input v-model="formData.credentials.token" :placeholder="$t('agentEditor.im.fields.token')" />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">EncodingAESKey</label>
-                  <t-input v-model="formData.credentials.encoding_aes_key" placeholder="EncodingAESKey" />
+                  <label class="form-label">{{ $t('agentEditor.im.fields.encodingAESKey') }}</label>
+                  <t-input v-model="formData.credentials.encoding_aes_key" :placeholder="$t('agentEditor.im.fields.encodingAESKey')" />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">Corp Agent ID</label>
-                  <t-input-number v-model="formData.credentials.corp_agent_id" placeholder="Corp Agent ID"
+                  <label class="form-label">{{ $t('agentEditor.im.fields.corpAgentId') }}</label>
+                  <t-input-number v-model="formData.credentials.corp_agent_id" :placeholder="$t('agentEditor.im.fields.corpAgentId')"
                     style="width: 100%;" />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">API Base URL</label>
+                  <label class="form-label">{{ $t('agentEditor.im.fields.apiBaseUrl') }}</label>
                   <t-input v-model="formData.credentials.api_base_url" placeholder="https://qyapi.weixin.qq.com" />
                   <p class="form-desc">{{ $t('agentEditor.im.wecomAPIBaseURLHint') }}</p>
                 </div>
@@ -313,26 +313,26 @@
                 <span class="hint-text">{{ $t('agentEditor.im.consoleTip') }}</span>
               </div>
               <div class="form-item">
-                <label class="form-label">App ID</label>
-                <t-input v-model="formData.credentials.app_id" placeholder="App ID" />
+                <label class="form-label">{{ $t('agentEditor.im.fields.appId') }}</label>
+                <t-input v-model="formData.credentials.app_id" :placeholder="$t('agentEditor.im.fields.appId')" />
               </div>
               <div class="form-item">
-                <label class="form-label">App Secret</label>
-                <t-input v-model="formData.credentials.app_secret" type="password" placeholder="App Secret" />
+                <label class="form-label">{{ $t('agentEditor.im.fields.appSecret') }}</label>
+                <t-input v-model="formData.credentials.app_secret" type="password" :placeholder="$t('agentEditor.im.fields.appSecret')" />
               </div>
               <div class="form-item">
-                <label class="form-label">Base URL</label>
+                <label class="form-label">{{ $t('agentEditor.im.fields.baseUrl') }}</label>
                 <t-input v-model="formData.credentials.api_base_url" placeholder="https://open.feishu.cn" />
                 <p class="form-desc">{{ $t('agentEditor.im.feishuAPIBaseURLHint') }}</p>
               </div>
               <template v-if="formData.mode === 'webhook'">
                 <div class="form-item">
-                  <label class="form-label">Verification Token</label>
-                  <t-input v-model="formData.credentials.verification_token" placeholder="Verification Token" />
+                  <label class="form-label">{{ $t('agentEditor.im.fields.verificationToken') }}</label>
+                  <t-input v-model="formData.credentials.verification_token" :placeholder="$t('agentEditor.im.fields.verificationToken')" />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">Encrypt Key</label>
-                  <t-input v-model="formData.credentials.encrypt_key" type="password" placeholder="Encrypt Key" />
+                  <label class="form-label">{{ $t('agentEditor.im.fields.encryptKey') }}</label>
+                  <t-input v-model="formData.credentials.encrypt_key" type="password" :placeholder="$t('agentEditor.im.fields.encryptKey')" />
                 </div>
               </template>
             </template>
@@ -348,22 +348,22 @@
               </div>
               <template v-if="formData.mode === 'websocket'">
                 <div class="form-item">
-                  <label class="form-label">App Token</label>
+                  <label class="form-label">{{ $t('agentEditor.im.fields.appToken') }}</label>
                   <t-input v-model="formData.credentials.app_token" type="password" placeholder="xapp-..." />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">Bot Token</label>
+                  <label class="form-label">{{ $t('agentEditor.im.fields.botToken') }}</label>
                   <t-input v-model="formData.credentials.bot_token" type="password" placeholder="xoxb-..." />
                 </div>
               </template>
               <template v-else>
                 <div class="form-item">
-                  <label class="form-label">Bot Token</label>
+                  <label class="form-label">{{ $t('agentEditor.im.fields.botToken') }}</label>
                   <t-input v-model="formData.credentials.bot_token" type="password" placeholder="xoxb-..." />
                 </div>
                 <div class="form-item">
-                  <label class="form-label">Signing Secret</label>
-                  <t-input v-model="formData.credentials.signing_secret" type="password" placeholder="Signing Secret" />
+                  <label class="form-label">{{ $t('agentEditor.im.fields.signingSecret') }}</label>
+                  <t-input v-model="formData.credentials.signing_secret" type="password" :placeholder="$t('agentEditor.im.fields.signingSecret')" />
                 </div>
               </template>
             </template>
@@ -378,14 +378,14 @@
                 <span class="hint-text">{{ $t('agentEditor.im.consoleTip') }}</span>
               </div>
               <div class="form-item">
-                <label class="form-label">Bot Token</label>
+                <label class="form-label">{{ $t('agentEditor.im.fields.botToken') }}</label>
                 <t-input v-model="formData.credentials.bot_token" type="password" placeholder="123456789:AABBccdd..." />
               </div>
               <template v-if="formData.mode === 'webhook'">
                 <div class="form-item">
-                  <label class="form-label">Secret Token</label>
+                  <label class="form-label">{{ $t('agentEditor.im.fields.secretToken') }}</label>
                   <t-input v-model="formData.credentials.secret_token" type="password"
-                    placeholder="Secret Token (optional)" />
+                    :placeholder="$t('agentEditor.im.fields.secretTokenOptional')" />
                 </div>
               </template>
             </template>
@@ -400,13 +400,13 @@
                 <span class="hint-text">{{ $t('agentEditor.im.consoleTip') }}</span>
               </div>
               <div class="form-item">
-                <label class="form-label">Client ID (AppKey)</label>
-                <t-input v-model="formData.credentials.client_id" placeholder="Client ID / AppKey" />
+                <label class="form-label">{{ $t('agentEditor.im.fields.clientId') }}（AppKey）</label>
+                <t-input v-model="formData.credentials.client_id" :placeholder="$t('agentEditor.im.fields.clientId')" />
               </div>
               <div class="form-item">
-                <label class="form-label">Client Secret (AppSecret)</label>
+                <label class="form-label">{{ $t('agentEditor.im.fields.clientSecret') }}（AppSecret）</label>
                 <t-input v-model="formData.credentials.client_secret" type="password"
-                  placeholder="Client Secret / AppSecret" />
+                  :placeholder="$t('agentEditor.im.fields.clientSecret')" />
               </div>
               <div class="form-item">
                 <label class="form-label">{{ $t('agentEditor.im.dingtalkCardTemplateId') }}</label>
@@ -426,20 +426,20 @@
                 <span class="hint-text">{{ $t('agentEditor.im.consoleTip') }}</span>
               </div>
               <div class="form-item">
-                <label class="form-label">App ID</label>
-                <t-input v-model="formData.credentials.app_id" placeholder="QQBot App ID" />
+                <label class="form-label">{{ $t('agentEditor.im.fields.appId') }}</label>
+                <t-input v-model="formData.credentials.app_id" :placeholder="$t('agentEditor.im.fields.appId')" />
               </div>
               <div class="form-item">
-                <label class="form-label">App Secret</label>
-                <t-input v-model="formData.credentials.client_secret" type="password" placeholder="QQBot App Secret" />
+                <label class="form-label">{{ $t('agentEditor.im.fields.appSecret') }}</label>
+                <t-input v-model="formData.credentials.client_secret" type="password" :placeholder="$t('agentEditor.im.fields.appSecret')" />
               </div>
               <div class="form-item">
-                <label class="form-label">API Base URL</label>
+                <label class="form-label">{{ $t('agentEditor.im.fields.apiBaseUrl') }}</label>
                 <t-input v-model="formData.credentials.api_base_url" placeholder="https://api.sgroup.qq.com" />
                 <p class="form-desc">{{ $t('agentEditor.im.qqbotAPIBaseURLHint') }}</p>
               </div>
               <div class="form-item">
-                <label class="form-label">Gateway URL</label>
+                <label class="form-label">{{ $t('agentEditor.im.fields.gatewayUrl') }}</label>
                 <t-input v-model="formData.credentials.gateway_url" placeholder="wss://api.sgroup.qq.com/websocket/" />
                 <p class="form-desc">{{ $t('agentEditor.im.qqbotGatewayURLHint') }}</p>
               </div>
@@ -456,21 +456,21 @@
                 <span class="hint-text">{{ $t('agentEditor.im.consoleTip') }}</span>
               </div>
               <div class="form-item">
-                <label class="form-label">Site URL</label>
+                <label class="form-label">{{ $t('agentEditor.im.fields.siteUrl') }}</label>
                 <t-input v-model="formData.credentials.site_url" placeholder="https://mattermost.example.com" />
               </div>
               <div class="form-item">
-                <label class="form-label">Bot Token</label>
-                <t-input v-model="formData.credentials.bot_token" type="password" placeholder="Bot Token" />
+                <label class="form-label">{{ $t('agentEditor.im.fields.botToken') }}</label>
+                <t-input v-model="formData.credentials.bot_token" type="password" :placeholder="$t('agentEditor.im.fields.botToken')" />
               </div>
               <div class="form-item">
-                <label class="form-label">Outgoing Webhook Token</label>
+                <label class="form-label">{{ $t('agentEditor.im.fields.outgoingWebhookToken') }}</label>
                 <t-input v-model="formData.credentials.outgoing_token" type="password"
-                  placeholder="Token from Outgoing Webhook" />
+                  :placeholder="$t('agentEditor.im.fields.outgoingWebhookToken')" />
               </div>
               <div class="form-item">
-                <label class="form-label">Bot User ID</label>
-                <t-input v-model="formData.credentials.bot_user_id" placeholder="Optional — filter bot self-messages" />
+                <label class="form-label">{{ $t('agentEditor.im.fields.botUserId') }}</label>
+                <t-input v-model="formData.credentials.bot_user_id" :placeholder="$t('agentEditor.im.fields.botUserIdOptional')" />
               </div>
               <div class="settings-group">
                 <div class="setting-row setting-row--last">
@@ -562,7 +562,7 @@
                 <!-- QR code displayed -->
                 <div v-else class="wechat-qr-display">
                   <div class="qr-container">
-                    <img :src="wechatQRImgUrl" alt="WeChat QR Code" class="qr-image" />
+                    <img :src="wechatQRImgUrl" alt="微信绑定二维码" class="qr-image" />
                     <div v-if="wechatQRStatus === 'expired'" class="qr-expired-overlay" @click="startWeChatBinding">
                       <t-icon name="refresh" class="refresh-icon" />
                       <span>{{ $t('agentEditor.im.wechatQRExpired') }}</span>

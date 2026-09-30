@@ -84,7 +84,7 @@
                                             @click="handleSuggestedQuestionClick(item)">
                                             <span class="suggested-question-text">{{ item.question }}</span>
                                             <span v-if="item.source === 'faq'"
-                                                class="suggested-question-badge faq">FAQ</span>
+                                                class="suggested-question-badge faq">常见问题</span>
                                         </div>
                                     </div>
                                 </div>

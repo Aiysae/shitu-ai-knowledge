@@ -1,40 +1,38 @@
 <template>
   <div class="markdown-test-page">
-    <h1 class="page-title">Markdown Rendering Test</h1>
+    <h1 class="page-title">Markdown 渲染检查</h1>
     <p class="page-desc">
-      Dev-only page for visual regression testing of chat answer markdown
-      (same typography as botmsg / AgentStreamDisplay / embed).
-      Add new test cases or paste arbitrary markdown in the editor below.
+      此页面用于检查对话回答的 Markdown 排版。可在下方输入内容，核对文字、公式、代码和表格的显示效果。
     </p>
 
-    <!-- Basic Text Styles (GPT markdown test doc alignment) -->
+    <!-- 基础文字样式 (GPT markdown test doc alignment) -->
     <section class="test-section">
-      <h2>Basic Text Styles</h2>
+      <h2>基础文字样式</h2>
       <div class="test-case">
         <div class="test-rendered markdown-content" v-html="basicTextHtml"></div>
       </div>
     </section>
 
-    <!-- LaTeX Formulas -->
+    <!-- LaTeX 公式 -->
     <section class="test-section">
-      <h2>LaTeX Formulas</h2>
+      <h2>LaTeX 公式</h2>
       <div v-for="(tc, i) in latexCases" :key="'latex-' + i" class="test-case">
         <div class="test-raw"><code>{{ tc.raw }}</code></div>
         <div class="test-rendered markdown-content" v-html="tc.html"></div>
       </div>
     </section>
 
-    <!-- Code Blocks -->
+    <!-- 代码块 -->
     <section class="test-section">
-      <h2>Code Blocks</h2>
+      <h2>代码块</h2>
       <div class="test-case">
         <div class="test-rendered markdown-content" v-html="codeBlockHtml"></div>
       </div>
     </section>
 
-    <!-- Tables -->
+    <!-- 表格 -->
     <section class="test-section">
-      <h2>Tables</h2>
+      <h2>表格</h2>
       <div class="test-case">
         <div class="test-rendered markdown-content" v-html="tableHtml"></div>
       </div>
@@ -42,15 +40,15 @@
 
     <!-- Lists & Blockquotes -->
     <section class="test-section">
-      <h2>Lists &amp; Blockquotes</h2>
+      <h2>列表与引用</h2>
       <div class="test-case">
         <div class="test-rendered markdown-content" v-html="listsHtml"></div>
       </div>
     </section>
 
-    <!-- Mixed Content (LaTeX + code + text) -->
+    <!-- 混合内容 (LaTeX + code + text) -->
     <section class="test-section">
-      <h2>Mixed Content</h2>
+      <h2>混合内容</h2>
       <div class="test-case">
         <div class="test-rendered markdown-content" v-html="mixedHtml"></div>
       </div>
@@ -58,21 +56,21 @@
 
     <!-- Mermaid -->
     <section class="test-section">
-      <h2>Mermaid Diagram</h2>
+      <h2>Mermaid 图表</h2>
       <div class="test-case">
         <div ref="mermaidContainer" class="test-rendered markdown-content" v-html="mermaidHtml"></div>
       </div>
     </section>
 
-    <!-- Streaming Simulation -->
+    <!-- 流式输出模拟 -->
     <section class="test-section">
-      <h2>Streaming Simulation</h2>
-      <p class="test-hint">Simulates character-by-character streaming, like during a chat response.</p>
+      <h2>流式输出模拟</h2>
+      <p class="test-hint">模拟对话回答逐字出现的效果。</p>
       <div class="stream-controls">
-        <button @click="startStream" :disabled="isStreaming" class="btn">Start</button>
-        <button @click="resetStream" class="btn">Reset</button>
+        <button @click="startStream" :disabled="isStreaming" class="btn">开始</button>
+        <button @click="resetStream" class="btn">重置</button>
         <label class="speed-label">
-          Speed:
+          速度：
           <input type="range" min="10" max="200" v-model.number="streamSpeed" />
           {{ streamSpeed }}ms
         </label>
@@ -82,12 +80,11 @@
       </div>
     </section>
 
-    <!-- Streaming Shimmer (in-progress step titles) -->
+    <!-- 流式加载高亮 (in-progress step titles) -->
     <section class="test-section">
-      <h2>Streaming Shimmer</h2>
+      <h2>流式加载高亮</h2>
       <p class="test-hint">
-        The "light sweep" applied to in-progress step titles in
-        AgentStreamDisplay / RagPipelineProgress. Running steps shimmer; finished ones are static.
+        观察进行中的步骤标题如何显示高亮，已完成步骤保持静止。
       </p>
       <div class="test-case shimmer-demo">
         <div class="action-card action-pending">
@@ -110,10 +107,10 @@
 
     <!-- Custom Editor -->
     <section class="test-section">
-      <h2>Custom Input</h2>
-      <p class="test-hint">Paste any markdown here to test rendering.</p>
+      <h2>自定义输入</h2>
+      <p class="test-hint">在此粘贴 Markdown 内容，检查渲染效果。</p>
       <textarea v-model="customInput" class="custom-textarea" rows="8"
-        placeholder="Type or paste markdown here..."></textarea>
+        placeholder="在此输入或粘贴 Markdown 内容……"></textarea>
       <div v-if="customInput.trim()" class="test-case">
         <div ref="customContainer" class="test-rendered markdown-content" v-html="customHtml"></div>
       </div>
@@ -285,7 +282,7 @@ graph TD
 \`\`\`
 `;
 
-// --- Streaming Simulation ---
+// --- 流式输出模拟 ---
 const fullStreamText = `
 好的，以下是根据知识库中**《xxx》学程手册**整理的有关XXX的介绍：
 

@@ -69,7 +69,7 @@
                   >
                     <span class="indexing-check-title">
                       {{ $t('knowledgeEditor.indexing.wikiTitle') }}
-                      <span class="indexing-new-badge">NEW</span>
+                      <span class="indexing-new-badge">新增</span>
                     </span>
                   </t-checkbox>
                   <p class="indexing-check-desc">{{ $t('knowledgeEditor.indexing.wikiDesc') }}</p>

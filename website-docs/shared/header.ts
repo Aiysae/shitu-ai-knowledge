@@ -1,9 +1,7 @@
 // Product navigation and shared masthead icons.
 export const siteNavigation = [
   { label: '产品能力', href: '/#capabilities', badge: '' },
-  { label: 'v0.8.2', href: '/#release', badge: 'NEW' },
-  { label: '生态集成', href: '/#ecosystem', badge: '' },
-  { label: '企业部署', href: '/#enterprise', badge: '' },
+  { label: '开始使用', href: '/#get-started', badge: '' },
   { label: '文档', href: '/docs/', badge: '' },
 ];
 export const repositoryUrl = 'https://github.com/Aiysae/shitu-ai-knowledge';

@@ -236,7 +236,7 @@
             />
           </div>
           <div class="form-item">
-            <label class="form-label">Backend</label>
+            <label class="form-label">后端类型</label>
             <t-select v-model="config.mineru_model" :placeholder="$t('settings.parser.defaultPipeline')" clearable>
               <t-option value="pipeline" label="pipeline" />
               <t-option value="vlm-auto-engine" label="vlm-auto-engine" />
@@ -285,7 +285,7 @@
           <h4 class="setting-drawer__section-title">{{ $t('settings.parser.configSection', '配置') }}</h4>
 
           <div class="form-item">
-            <label class="form-label required">API Key</label>
+            <label class="form-label required">API 密钥</label>
             <t-input
               v-model="config.mineru_api_key"
               type="password"
@@ -296,7 +296,7 @@
             </t-input>
           </div>
           <div class="form-item">
-            <label class="form-label">Model Version</label>
+            <label class="form-label">模型版本</label>
             <t-select v-model="config.mineru_cloud_model" :placeholder="$t('settings.parser.defaultPipeline')" clearable>
               <t-option value="pipeline" label="pipeline" />
               <t-option value="vlm" :label="$t('settings.parser.vlmLabel')" />
@@ -308,7 +308,7 @@
             <div class="form-toggles">
               <t-checkbox v-model="config.mineru_cloud_enable_formula">{{ $t('settings.parser.formulaRecognition') }}</t-checkbox>
               <t-checkbox v-model="config.mineru_cloud_enable_table">{{ $t('settings.parser.tableRecognition') }}</t-checkbox>
-              <t-checkbox v-model="config.mineru_cloud_enable_ocr">OCR</t-checkbox>
+              <t-checkbox v-model="config.mineru_cloud_enable_ocr">文字识别</t-checkbox>
             </div>
           </div>
           <div class="form-item">
@@ -348,7 +348,7 @@
           <h4 class="setting-drawer__section-title">{{ $t('settings.parser.configSection', '配置') }}</h4>
 
           <div class="form-item">
-            <label class="form-label required">Token</label>
+            <label class="form-label required">令牌</label>
             <t-input
               v-model="config.paddleocr_vl_cloud_token"
               type="password"
@@ -359,7 +359,7 @@
             </t-input>
           </div>
           <div class="form-item">
-            <label class="form-label">Model</label>
+            <label class="form-label">模型</label>
             <t-input
               v-model="config.paddleocr_vl_cloud_model"
               placeholder="PaddleOCR-VL-1.6"
@@ -785,10 +785,10 @@ onMounted(loadAll)
   .provider-card-badge-color(#0052d9);
 }
 
-// 解析引擎徽章配色 —— 内置/官方系绿，外部工具按性质各取一色。
+// 解析引擎徽章配色 —— 内置服务使用产品品牌色，外部工具按性质各取一色。
 .engine-card--builtin .engine-card__badge,
 .engine-card--weknoracloud .engine-card__badge {
-  .provider-card-badge-color(#07c05f);
+  .provider-card-badge-color(#80521f);
 }
 .engine-card--simple .engine-card__badge {
   .provider-card-badge-color(#464646);
@@ -1113,7 +1113,7 @@ onMounted(loadAll)
 .parser-engine-drawer--builtin .setting-drawer__header-icon,
 .parser-engine-drawer--weknoracloud .setting-drawer__header-icon {
   background: color-mix(in srgb, var(--td-brand-color) 12%, transparent);
-  color: #07C05F;
+  color: var(--td-brand-color);
 }
 .parser-engine-drawer--simple .setting-drawer__header-icon {
   background: rgba(70, 70, 70, 0.1);

@@ -118,15 +118,15 @@
           <h4 class="setting-drawer__section-title">{{ $t('modelSettings.debug.parameters') }}</h4>
           <div class="parameter-grid">
             <div class="form-item">
-              <label class="form-label">Temperature</label>
+              <label class="form-label">温度</label>
               <t-input-number v-model="temperature" :min="0" :max="2" :step="0.1" theme="column" />
             </div>
             <div class="form-item">
-              <label class="form-label">Top P</label>
+              <label class="form-label">核采样概率</label>
               <t-input-number v-model="topP" :min="0.01" :max="1" :step="0.1" theme="column" />
             </div>
             <div class="form-item">
-              <label class="form-label">Max Tokens</label>
+              <label class="form-label">最大生成令牌数</label>
               <t-input-number v-model="maxTokens" :min="1" :max="8192" :step="128" theme="column" />
             </div>
           </div>

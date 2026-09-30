@@ -4,7 +4,7 @@
         <div class="logo_row" v-if="!uiStore.sidebarCollapsed">
             <div class="logo_box" @click="router.push('/platform/knowledge-bases')" style="cursor: pointer;">
                 <BrandLogo />
-                <sup v-if="isLiteEdition" class="lite-badge">Lite</sup>
+                <sup v-if="isLiteEdition" class="lite-badge">轻量版</sup>
             </div>
             <div class="logo_actions">
                 <t-tooltip placement="bottom">
@@ -1991,7 +1991,7 @@ html[theme-mode="dark"] .aside_box .menu_item_c_active .menu_icon img.icon {
     opacity: 0.9;
 }
 
-// Active (green) icons should not be inverted
+// Active brand icons should not be inverted
 html[theme-mode="dark"] .aside_box .menu_item_active .menu_icon img.icon {
     filter: none;
     opacity: 1;

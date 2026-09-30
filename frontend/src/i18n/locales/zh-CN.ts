@@ -147,11 +147,11 @@ export default {
     earliestUpdated: '最早更新',
     recentlyCreated: '最近创建',
     earliestCreated: '最早创建',
-    nameAscending: 'A–Z',
-    nameDescending: 'Z–A',
+    nameAscending: '名称升序',
+    nameDescending: '名称降序',
   },
   platformApiKeys: {
-    title: '平台 API Key',
+    title: '平台 API 密钥',
     description: '为跨空间自动化创建平台级凭据；调用空间接口时通过 X-Tenant-ID 指定目标空间。',
     securityNotice: '平台 API Key 默认可选择任意空间。请只授予必要能力；密钥明文仅在创建时显示一次。',
     create: '创建平台 API Key',
@@ -439,9 +439,9 @@ export default {
     filterByAgentWithName: '按智能体筛选：{name}',
     filterAllAgents: '全部智能体',
     claw: {
-      title: 'ClawHub Skill',
+      title: 'ClawHub 技能',
       subtitle: '通过 势途AI企业级知识库 REST API 导入文档并执行混合检索（向量 + 关键词）。适用于上传文件/URL/Markdown 到知识库、跨库检索与浏览知识内容。',
-      capabilitiesTitle: 'Skill 能力',
+      capabilitiesTitle: '技能能力',
       stepsTitle: '配置步骤',
       openApiSettings: '打开 API 信息',
       copy: '复制',
@@ -449,7 +449,7 @@ export default {
       copyCmdSuccess: '已复制安装命令',
       ecosystemNote: 'Skill 托管于 ClawHub（{\'@\'}lyingbug/weknora），完整 API 说明与版本历史请参见 ClawHub 页面。',
       installCta: '前往 ClawHub',
-      installCtaHint: '安装 WeKnora Skill · 将在新标签页打开',
+      installCtaHint: '安装 ClawHub 上的知识库技能 · 将在新标签页打开',
       hubMeta: 'ClawHub · {\'@\'}lyingbug/weknora · MIT-0',
       steps: {
         verify: {
@@ -457,7 +457,7 @@ export default {
           desc: '安装后让 Agent 列出知识库或执行一次检索，确认 API 凭证与网络可达。'
         },
         install: {
-          title: '安装 Skill',
+          title: '安装技能',
           desc: '在已安装 OpenClaw CLI 的环境中执行下方命令，或前往 ClawHub 页面按指引安装。'
         },
         env: {
@@ -557,7 +557,7 @@ export default {
       title: '已接入的 IM'
     },
     api: {
-      title: 'API 集成',
+      title: 'API 接入',
       subtitle: '通过 REST API 接入服务，并配置请求如何携带终端用户身份。',
       loading: '正在加载 API 集成设置...',
       retry: '重试',
@@ -565,13 +565,13 @@ export default {
       copySuccess: '已复制',
       baseUrl: 'API 地址',
       baseUrlDesc: '与 REST API 路径拼接使用。',
-      apiKeys: 'API Keys',
+      apiKeys: 'API 密钥',
       apiKeysDesc: '为不同集成创建独立 Key，并限制操作权限与可访问知识库范围。',
       createApiKey: '创建 API Key',
       createApiKeyDialogDesc: '选择该 API Key 可用的能力和知识库范围。',
       noApiKeys: '暂无 API Key',
       apiKeyName: '名称',
-      apiKeyValue: 'API Key',
+      apiKeyValue: 'API 密钥',
       apiKeyNamePlaceholder: '例如：MCP 只读访问',
       apiKeyNameRequired: '请输入 API Key 名称',
       apiKeyCapabilitiesRequired: 'Scoped API Key 至少需要选择一项能力',
@@ -672,10 +672,10 @@ export default {
       requestExampleAgentChat: '# 2. Agent 对话（SSE；将 <session_id> 替换为第 1 步返回的 id）',
       requestExampleJwtPlaceholder: '<后端签发的 JWT>',
       requestExample: '请求示例',
-      playgroundTitle: 'API Playground',
+      playgroundTitle: 'API 调试台',
       playgroundDesc: '用当前 API Key 和身份模式发起真实请求，验证会话创建、智能体对话和 SSE 返回。',
-      playgroundOpen: '打开 Playground',
-      playgroundDrawerDesc: '按真实 API 集成方式调试 Session、Agent Chat 和 SSE 返回',
+      playgroundOpen: '打开调试台',
+      playgroundDrawerDesc: '按实际 API 接入方式调试会话、智能体对话和 SSE 返回',
       playgroundSectionRequest: '请求配置',
       playgroundSectionPreview: '请求预览',
       playgroundSectionResult: '运行结果',
@@ -707,14 +707,14 @@ export default {
       playgroundEmptyResult: '运行后将在这里显示 Session 响应、SSE 原始输出和提取出的回答。',
       playgroundSuccess: '测试完成（{ms}ms）',
       playgroundStopped: '测试已停止',
-      playgroundFailed: 'API Playground 测试失败',
+      playgroundFailed: 'API 调试失败',
       loadFailed: '加载 API 集成设置失败',
       saveFailed: '保存 API 集成设置失败',
       saveSuccess: 'API 集成设置已保存',
       autoSaveNeedSecret: '签名 Token 模式需要填写 HMAC 密钥后才能自动保存。'
     },
     mcpserver: {
-      title: 'MCP Server',
+      title: 'MCP 服务端',
       subtitle: '把当前空间发布为 MCP 服务，供 Claude Desktop、Cursor、Claude Code 等 MCP 客户端直接连接。每个端点有独立的令牌、知识库范围和工具清单。',
       listTitle: '已发布的端点',
       empty: '暂无 MCP 端点',
@@ -823,8 +823,8 @@ export default {
       api: 'API 集成',
       chrome: 'Chrome 插件',
       cli: 'CLI',
-      claw: 'Claw Skill',
-      mcpserver: 'MCP Server'
+      claw: 'Claw 技能',
+      mcpserver: 'MCP 服务端'
     }
   },
   datasource: {
@@ -1231,7 +1231,35 @@ export default {
       }
     },
     im: {
-      title: 'IM 集成',
+      fields: {
+        botId: '机器人编号',
+        botSecret: '机器人密钥',
+        wsEndpoint: 'WebSocket 接入地址',
+        corpId: '企业编号',
+        agentSecret: '智能体密钥',
+        token: '令牌',
+        encodingAESKey: '消息加密密钥',
+        corpAgentId: '企业应用编号',
+        apiBaseUrl: 'API 基础地址',
+        appId: '应用编号',
+        appSecret: '应用密钥',
+        baseUrl: '基础地址',
+        verificationToken: '验证令牌',
+        encryptKey: '加密密钥',
+        appToken: '应用令牌',
+        botToken: '机器人令牌',
+        signingSecret: '签名密钥',
+        secretToken: '安全令牌',
+        clientId: '客户端编号',
+        clientSecret: '客户端密钥',
+        gatewayUrl: '网关地址',
+        siteUrl: '站点地址',
+        outgoingWebhookToken: '出站 Webhook 令牌',
+        botUserId: '机器人用户编号',
+        secretTokenOptional: '安全令牌（可选）',
+        botUserIdOptional: '可选，用于过滤机器人自身的消息',
+      },
+      title: '即时通讯集成',
       description: '将智能体接入即时通讯平台，支持企业微信、飞书、Slack、Telegram、钉钉、Mattermost、微信、QQBot 和云之家',
       feishu: '飞书',
       lark: 'Lark（飞书国际版）',
@@ -1244,7 +1272,7 @@ export default {
       qqbot: 'QQBot',
       yunzhijia: '云之家',
       addChannel: '添加渠道',
-      channelsTitle: 'IM 渠道',
+      channelsTitle: '即时通讯渠道',
       disabled: '已停用',
       editChannel: '编辑渠道',
       deleteConfirm: '确定删除该渠道？删除后无法恢复。',
@@ -1257,7 +1285,7 @@ export default {
       outputStream: '流式输出',
       outputFull: '完整输出',
       callbackUrl: '回调地址',
-      empty: '暂无 IM 渠道',
+      empty: '暂无即时通讯渠道',
       unnamed: '未命名渠道',
       docLink: '查看接入文档',
       wecomConsole: '企业微信管理后台',
@@ -2280,7 +2308,7 @@ export default {
     authConfig: '认证配置',
     authType: '认证方式',
     authTypeNone: '无 / 自定义 Header',
-    authTypeApiKey: 'API Key / Token',
+    authTypeApiKey: 'API 密钥 / 令牌',
     authTypeOAuth: 'OAuth 2.0（首次连接授权）',
     oauthScopes: 'Scopes（可选，空格分隔）',
     oauthAuthorization: '授权状态',
@@ -2437,7 +2465,7 @@ export default {
       audioFile: '音频文件',
       chooseFile: '选择文件',
       parameters: '请求参数',
-      systemPrompt: 'System Prompt',
+      systemPrompt: '系统提示词',
       systemPromptPlaceholder: '可选，输入系统提示词',
       run: '运行测试',
       copyResult: '复制结果',
@@ -2496,14 +2524,14 @@ export default {
       empty: '暂无 VLLM 视觉模型'
     },
     rerank: {
-      title: 'ReRank 模型',
+      title: '重排序模型',
       desc: '配置用于结果重排序的模型',
-      empty: '暂无 ReRank 模型'
+      empty: '暂无重排序模型'
     },
     embedding: {
-      title: 'Embedding 模型',
+      title: '向量化模型',
       desc: '配置用于文本向量化的嵌入模型',
-      empty: '暂无 Embedding 模型'
+      empty: '暂无向量化模型'
     },
     chat: {
       title: '对话模型',
@@ -2511,7 +2539,7 @@ export default {
       empty: '暂无对话模型'
     },
     source: {
-      remote: 'Remote',
+      remote: '远程',
       openaiCompatible: 'OpenAI兼容',
       custom: '自定义'
     },
@@ -2521,8 +2549,8 @@ export default {
     },
     typeShort: {
       chat: '对话',
-      embedding: 'Embedding',
-      rerank: 'ReRank',
+      embedding: '向量化',
+      rerank: '重排序',
       vllm: '视觉',
       asr: '语音'
     }
@@ -2719,8 +2747,8 @@ export default {
     fullApiAccess: '完整 API 访问',
     knowledgeBaseManagement: '知识库管理',
     carousel: {
-      agenticRagTitle: 'Agentic RAG',
-      agenticRagDesc: 'ReAct 推理 + 工具调用 + 多步思考',
+      agenticRagTitle: '智能体检索问答',
+      agenticRagDesc: '分步分析、调用工具并核对结果',
       hybridSearchTitle: '混合检索策略',
       hybridSearchDesc: 'BM25 + 向量 + 知识图谱',
       wikiTitle: 'Wiki 知识库',
@@ -2882,7 +2910,7 @@ export default {
       sourceLabel: '模型来源',
       sourceLocal: 'Ollama',
       sourceRemote: 'API',
-      baseUrlLabel: 'Base URL',
+      baseUrlLabel: '基础地址',
       displayNameLabel: '显示名称（可选）',
       displayNamePlaceholder: '例如：客服问答模型',
       displayNameDesc: '仅用于界面展示，实际调用仍使用上面的模型名称。',
@@ -2914,7 +2942,7 @@ export default {
       contextWindowPlaceholder: '默认 {value}',
       contextWindowDesc: '该模型一次请求能容纳的 token 数。智能体压缩对话历史会按此上限工作。留空则使用默认 200000（200K）。请按厂商文档填写真实值，填大会导致压缩不触发、上游直接拒绝请求。',
       contextWindowDefaultHint: '未设置，使用默认 {value}',
-      contextWindowTokens: '{count} tokens',
+      contextWindowTokens: '{count} 个令牌',
       maxConcurrencyLabel: '后台并发上限',
       maxConcurrencyPlaceholder: '0 表示使用全局默认',
       maxConcurrencyDesc: '限制文档入库/富化等后台任务对该模型的并发调用数（按模型全副本共享）。0 或留空表示沿用全局默认；不影响交互式对话。',
@@ -3814,7 +3842,7 @@ export default {
       skipNoCheckpoint: '对话已回滚，工作区未改动（没有可回退的检查点）',
     },
     requestInfoTitle: '请求信息',
-    requestInfoRequestId: 'Request ID',
+    requestInfoRequestId: '请求编号',
     requestInfoMessageId: '消息 ID',
     requestInfoSessionId: '会话 ID',
     requestInfoUrl: '请求',
@@ -3822,12 +3850,12 @@ export default {
     requestInfoEmpty: '暂无请求信息',
     channelWeb: '网页',
     channelApi: 'API',
-    channelIm: 'IM',
+    channelIm: '即时通讯',
     chunkLabel: '片段{index}:',
     navigateToDocument: '查看文档详情',
     chunkIdLabel: '片段ID:',
     documentIdLabel: '文档ID:',
-    faqIdLabel: 'FAQ ID:',
+    faqIdLabel: '常见问题编号:',
     faqContainerIdLabel: '所属文档ID:',
     faqAnswersLabel: '答案:',
     chunkOrdinal: '片段 {index}',
@@ -4629,7 +4657,7 @@ export default {
         targetId: '对象 ID',
         actorId: '发起人 ID',
         apiKeyName: 'API Key 名称',
-        apiKeyId: 'API Key ID',
+        apiKeyId: 'API 密钥编号',
         details: '详情'
       },
       columns: {
@@ -4706,7 +4734,7 @@ export default {
     sessionFailed: '无法创建对话会话，请稍后重试',
     channelDisabled: '嵌入渠道已停用，请在 Agent 编辑器的「网页嵌入」中重新启用',
     loading: '加载中...',
-    tabIframe: 'iframe',
+    tabIframe: '网页嵌入',
     tabWidget: '浮窗',
     tabSecure: '安全模式',
     widgetPosition: '浮窗位置',
@@ -5010,7 +5038,7 @@ export default {
       bold: '加粗文本',
       italic: '斜体文本',
       strike: '删除线',
-      inlineCode: 'code'
+      inlineCode: '代码'
     }
   },
   file: {
@@ -5068,7 +5096,7 @@ export default {
     all: '全部',
     clear: '清空',
     website: '官方网站',
-    clawhubSkill: 'Claw Skill',
+    clawhubSkill: 'Claw 技能',
     github: 'GitHub',
     githubStarTip: '在 GitHub 打开仓库，若觉得有用欢迎点个 Star',
     on: '开启',
@@ -5521,7 +5549,7 @@ export default {
     namePlaceholder: '例如：my-vector-store',
     connectionInfo: '连接信息',
     advancedIndexConfig: '高级设置',
-    envTag: 'DEFAULT',
+    envTag: '默认',
     testConnection: '测试连接',
     testing: '测试中...',
     immutableNotice: '创建后无法更改引擎类型、连接和索引设置。\n如需更改，请删除后重新创建。',
@@ -5809,7 +5837,7 @@ export default {
       apiUrl: 'API 端点',
       proxyUrl: 'Proxy 端点',
       sandboxDomain: '沙箱域名',
-      apiKey: 'API Key',
+      apiKey: 'API 密钥',
       templateId: '模板 ID',
       httpTimeout: 'HTTP 超时（秒）',
       httpTimeoutHelp: '调用沙箱管理接口的等待上限，超过即视为端点不可用。留空按 30 秒。',
@@ -6074,7 +6102,7 @@ export default {
       basicSection: '基本配置',
       modeSection: '部署模式',
       credentialsSection: '凭证',
-      bucketSection: 'Bucket',
+      bucketSection: '存储桶',
       useSslDesc: '通过 HTTPS 访问 MinIO',
       loading: '加载中...',
       retry: '重试',
@@ -6270,8 +6298,8 @@ export default {
       addModelsEmbeddingFailed: 'Embedding 模型连接测试失败，无法获取向量维度',
       addModelsDisplayName: {
         chat: 'WeKnoraCloud 对话',
-        embedding: 'WeKnoraCloud Embedding',
-        rerank: 'WeKnoraCloud ReRank',
+        embedding: 'WeKnoraCloud 向量化',
+        rerank: 'WeKnoraCloud 重排序',
         vllm: 'WeKnoraCloud 视觉'
       },
       modelsSection: {
@@ -6334,7 +6362,7 @@ export default {
     durationSuffix: '耗时 <strong>{duration}</strong>',
     stepSummarySeparator: ' · ',
     contextCompacted: '压缩上下文',
-    contextCompactedSummary: '{before} → {after} tokens',
+    contextCompactedSummary: '{before} → {after} 个令牌',
     contextCompactedDegraded: '摘要不可用，已保留原始记录',
     title: '智能体',
     subtitle: '配置和管理您的智能体，自定义对话行为和能力',
@@ -6602,7 +6630,7 @@ export default {
     copyDetails: '复制详情',
     copied: '已复制到剪贴板',
     close: '关闭',
-    live: 'LIVE',
+    live: '实时',
     liveTooltip: '解析进行中，每 2 秒自动刷新一次',
     autoRefreshOn: '自动刷新中',
     fetchFailedShort: '刷新失败',
@@ -6719,7 +6747,7 @@ export default {
     tagsEmpty: '当前知识库暂无标签，可上传后在标签管理中创建',
     tagsLoadFailed: '标签加载失败，可稍后在文档列表中设置',
     noItems: '请至少添加一个文件或 URL',
-    urlItemLabel: 'URL',
+    urlItemLabel: '网址',
     urlAdded: '已添加 URL',
     urlDuplicate: '该 URL 已在列表中',
     statusNeedsSetup: '待配置',
@@ -6772,8 +6800,8 @@ export default {
       earliestUpdated: '最早更新',
       newestCreated: '最新上传',
       earliestCreated: '最早上传',
-      nameAscending: 'A–Z',
-      nameDescending: 'Z–A',
+      nameAscending: '名称升序',
+      nameDescending: '名称降序',
     },
     tagUpdateSuccess: '标签已更新',
     tagEditDialogHeading: '编辑标签',
@@ -7272,7 +7300,7 @@ export default {
           desc: '控制 PDF、Office 等文件的解析方式。默认配置适用于大多数场景，有 OCR 需求时可在此调整。'
         },
         embedding: {
-          title: 'Embedding 模型',
+          title: '向量化模型',
           desc: '将文本转为向量以支持语义检索。与上方索引策略中的「向量/关键词检索」配合使用。'
         },
         llm: {

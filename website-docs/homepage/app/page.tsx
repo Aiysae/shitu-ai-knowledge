@@ -7,7 +7,7 @@ import s from "./home.module.css";
 const repo = "https://github.com/Aiysae/shitu-ai-knowledge";
 const features = [
   { icon: "search", title: "知识问答", description: "汇集文档、网页和 FAQ，结合语义与关键词检索，回答附带来源引用。", guide: "03-features/05-retrieval-engines" },
-  { icon: "agent", title: "Agent 与 MCP", description: "在知识库中使用智能体，也可配置 MCP 端点，将知识检索接入其他 AI 工具。", guide: "03-features/08-mcp" },
+  { icon: "agent", title: "智能体与 MCP", description: "在知识库中使用智能体，也可配置 MCP 端点，将知识检索接入其他 AI 工具。", guide: "03-features/08-mcp" },
   { icon: "shield", title: "企业部署", description: "在自己的环境中运行，配置模型、存储、空间与成员权限。", guide: "03-features/01-tenant-auth" },
 ];
 
@@ -20,7 +20,7 @@ export default function Home() {
         <h1>势途AI企业级知识库</h1>
         <p className={s.heroDescription}>汇集团队资料，用于知识问答、智能体协作和知识整理。</p>
         <div className={s.actions}><a className={s.primary} href={`${repo}#快速开始`}>部署与使用 <Icon name="arrow" /></a><a className={s.secondary} href={repo} target="_blank" rel="noreferrer"><Icon name="github" /> GitHub</a></div>
-        <div className={s.trustBar}><span>由Vantage万极维护并开源</span><span>支持私有化部署</span><span>MIT License 与第三方许可</span></div>
+        <div className={s.trustBar}><span>由Vantage万极维护并开源</span><span>支持私有化部署</span><span>MIT 许可与第三方许可</span></div>
       </section>
       <section id="capabilities" className={`${s.shell} ${s.section}`}>
         <div className={s.modeGrid}>{features.map(feature => <article className={s.mode} key={feature.title}><Icon name={feature.icon} /><h2>{feature.title}</h2><p>{feature.description}</p><a className={s.textLink} href={`/docs/${feature.guide}.html`}>查看文档 <Icon name="arrow" /></a></article>)}</div>
