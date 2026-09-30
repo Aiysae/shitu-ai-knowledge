@@ -1803,7 +1803,7 @@ export default {
           desc: 'MinerU 自部署服务'
         },
         simple: {
-          name: 'Simple',
+          name: '基础解析',
           desc: '简单格式 & 图片解析（无需外部服务）'
         },
         anydoc: {

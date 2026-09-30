@@ -52,7 +52,7 @@ const clearOIDCCallbackState = (path = '/') => {
 const syncOIDCUserContext = async () => {
   const currentUserResponse = await getCurrentUser()
   if (!currentUserResponse.success || !currentUserResponse.data?.user) {
-    throw new Error(currentUserResponse.message || 'Failed to get user information')
+    throw new Error(currentUserResponse.message || t('authStore.errors.parseUserFailed'))
   }
 
   const { user, tenant, memberships, capabilities } = currentUserResponse.data
@@ -98,7 +98,7 @@ const syncOIDCUserContext = async () => {
 
 const persistOIDCLoginResponse = async (response: any) => {
   if (!response.token) {
-    throw new Error(response.message || 'OIDC login failed')
+    throw new Error(response.message || t('auth.oidcLoginFailed'))
   }
 
   authStore.setToken(response.token)
@@ -139,7 +139,7 @@ const handleGlobalOIDCCallback = async () => {
   if (oidcError) {
     clearOIDCCallbackState('/login')
     await router.replace('/login')
-    MessagePlugin.error(oidcErrorDescription || 'OIDC login failed')
+    MessagePlugin.error(oidcErrorDescription || t('auth.oidcLoginFailed'))
     return
   }
 
@@ -147,7 +147,7 @@ const handleGlobalOIDCCallback = async () => {
     if (!oidcResult) {
       clearOIDCCallbackState('/login')
       await router.replace('/login')
-      MessagePlugin.error('OIDC login failed')
+      MessagePlugin.error(t('auth.oidcLoginFailed'))
       return
     }
 
@@ -161,13 +161,13 @@ const handleGlobalOIDCCallback = async () => {
 
     clearOIDCCallbackState('/login')
     await router.replace('/login')
-    MessagePlugin.error(response.message || 'OIDC login failed')
+    MessagePlugin.error(response.message || t('auth.oidcLoginFailed'))
   } catch (error: any) {
     console.error('Global OIDC callback handling failed:', error)
     authStore.logout()
     clearOIDCCallbackState('/login')
     await router.replace('/login')
-    MessagePlugin.error(error.message || 'OIDC login failed')
+    MessagePlugin.error(error.message || t('auth.oidcLoginFailed'))
   }
 }
 
