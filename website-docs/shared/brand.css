@@ -3,20 +3,20 @@
   color-scheme: light;
   --wk-ink: #111217;
   --wk-ink-deep: #0c0d11;
-  --wk-ink-soft: #4f4a43;
-  --wk-ink-mute: #6e675d;
-  --wk-gold: #9b672b;
-  --wk-gold-light: #ddb674;
-  --wk-paper: #f8f6f2;
-  --wk-paper-2: #f2eee7;
-  --wk-paper-3: #e8e1d6;
+  --wk-ink-soft: #4b5567;
+  --wk-ink-mute: #667286;
+  --wk-gold: #2456d3;
+  --wk-gold-light: #79a9ff;
+  --wk-paper: #f7faff;
+  --wk-paper-2: #eef3fb;
+  --wk-paper-3: #dfe8f7;
   --wk-rule: rgba(17, 18, 23, .12);
   --wk-rule-soft: rgba(17, 18, 23, .07);
   --wk-surface: #fff;
-  --wk-header: rgba(248, 246, 242, .96);
-  --wk-button-hover: #29221c;
-  --wk-accent-text: #80521f;
-  --wk-accent-border: #dcc8a6;
+  --wk-header: rgba(247, 250, 255, .96);
+  --wk-button-hover: #1b46ad;
+  --wk-accent-text: #2456d3;
+  --wk-accent-border: #b8cdf8;
   --wk-logo-ground: #fff;
   --wk-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "HarmonyOS Sans SC", "Source Han Sans SC", "Noto Sans CJK SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --wk-font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Songti SC", "Source Han Serif SC", "Noto Serif CJK SC", "STSong", serif;
@@ -24,21 +24,21 @@
 }
 html.dark {
   color-scheme: dark;
-  --wk-ink: #f5f1e9;
-  --wk-ink-soft: #c7c0b4;
-  --wk-ink-mute: #a99f91;
-  --wk-gold: #ddb674;
-  --wk-gold-light: #e8c78d;
+  --wk-ink: #f5f8ff;
+  --wk-ink-soft: #c8d4e7;
+  --wk-ink-mute: #a6b7d1;
+  --wk-gold: #8db7ff;
+  --wk-gold-light: #b8d1ff;
   --wk-paper: #111217;
   --wk-paper-2: #1a1b1f;
-  --wk-paper-3: #26231f;
-  --wk-rule: rgba(221, 182, 116, .14);
-  --wk-rule-soft: rgba(221, 182, 116, .08);
+  --wk-paper-3: #222c3e;
+  --wk-rule: rgba(141, 183, 255, .14);
+  --wk-rule-soft: rgba(141, 183, 255, .08);
   --wk-surface: #1a1b1f;
   --wk-header: rgba(17, 18, 23, .96);
-  --wk-button-hover: #f0d7a9;
-  --wk-accent-text: #e8c78d;
-  --wk-accent-border: #675239;
+  --wk-button-hover: #bfd6ff;
+  --wk-accent-text: #a2c3ff;
+  --wk-accent-border: #45699f;
 }
 
 /* Shared Shitu mark and product name. */

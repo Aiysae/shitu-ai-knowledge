@@ -840,12 +840,23 @@ onMounted(async () => {
 
 <style lang="less" scoped>
 .login-layout {
+  /* 登录入口使用黑金橙；系统内部继续使用全局蓝钻主题。 */
+  --td-brand-color: #b8610c;
+  --td-brand-color-hover: #c46b0a;
+  --td-brand-color-active: #96500a;
+  --td-brand-color-light: #fff3dc;
+  --td-brand-color-focus: rgba(232, 132, 24, 0.2);
+  --td-text-color-brand: var(--td-brand-color);
+  --td-text-color-link: var(--td-brand-color);
   display: flex;
   width: 100%;
   min-height: 100%;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(225deg, #111217 0%, #17171a 35%, #29221c 72%, #3a2b1f 100%);
+  background:
+    radial-gradient(ellipse 55% 72% at 87% 92%, rgba(232, 132, 24, 0.26), transparent 72%),
+    radial-gradient(ellipse 54% 65% at 15% 8%, rgba(246, 190, 88, 0.16), transparent 75%),
+    linear-gradient(135deg, #070a10 0%, #101622 52%, #1b1820 100%);
 
   &::before {
     content: '';
@@ -854,8 +865,8 @@ onMounted(async () => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 18% 72%, rgba(221, 182, 116, 0.12) 0%, transparent 45%),
-      radial-gradient(circle at 82% 22%, rgba(221, 182, 116, 0.06) 0%, transparent 42%);
+    background: radial-gradient(circle at 18% 72%, rgba(246, 190, 88, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 82% 22%, rgba(232, 132, 24, 0.09) 0%, transparent 42%);
     pointer-events: none;
   }
 }
@@ -881,7 +892,7 @@ onMounted(async () => {
   border: 2px solid rgba(255, 255, 255, 0.3);
   box-shadow:
     0 0 15px rgba(255, 255, 255, 0.35),
-    0 0 30px rgba(221, 182, 116, 0.18),
+    0 0 30px rgba(246, 190, 88, 0.18),
     inset 0 0 8px rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
@@ -1325,7 +1336,7 @@ onMounted(async () => {
   }
 
   &.active {
-    background: var(--td-success-color-light);
+    background: var(--td-brand-color-light);
     color: var(--td-brand-color-active);
   }
 }
@@ -1415,7 +1426,7 @@ onMounted(async () => {
   margin: 10px 0 0;
   padding: 8px 12px;
   border-radius: var(--app-radius-md);
-  background: var(--td-success-color-light);
+  background: var(--td-brand-color-light);
   color: var(--td-brand-color-active);
   font-size: 12.5px;
   line-height: 1.5;
@@ -1463,7 +1474,7 @@ onMounted(async () => {
     &:hover {
       border-color: var(--td-brand-color-active);
       color: var(--td-brand-color-active);
-      background: var(--td-success-color-light);
+      background: var(--td-brand-color-light);
     }
   }
 }
@@ -1624,7 +1635,7 @@ onMounted(async () => {
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: var(--td-success-color-light);
+      background: var(--td-brand-color-light);
       color: var(--td-brand-color-active);
       display: flex;
       align-items: center;
@@ -1823,7 +1834,10 @@ onMounted(async () => {
 <style lang="less">
 html[theme-mode="dark"] {
   .login-layout {
-    background: linear-gradient(225deg, #0c0d11 0%, #141417 38%, #241e19 75%, #31241b 100%);
+    background:
+      radial-gradient(ellipse 55% 72% at 87% 92%, rgba(232, 132, 24, 0.23), transparent 72%),
+      radial-gradient(ellipse 54% 65% at 15% 8%, rgba(246, 190, 88, 0.13), transparent 75%),
+      linear-gradient(135deg, #05070c 0%, #0d1420 52%, #181721 100%);
   }
 
   .knowledge-node {
@@ -1895,7 +1909,7 @@ html[theme-mode="dark"] {
   }
 
   .login-features .feature-icon {
-    background: rgba(6, 176, 77, 0.15);
+    background: rgba(246, 190, 88, 0.15);
   }
 }
 </style>

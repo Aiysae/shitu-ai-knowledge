@@ -788,7 +788,7 @@ onMounted(loadAll)
 // 解析引擎徽章配色 —— 内置服务使用产品品牌色，外部工具按性质各取一色。
 .engine-card--builtin .engine-card__badge,
 .engine-card--weknoracloud .engine-card__badge {
-  .provider-card-badge-color(#80521f);
+  .provider-card-badge-color(#2456d3);
 }
 .engine-card--simple .engine-card__badge {
   .provider-card-badge-color(#464646);

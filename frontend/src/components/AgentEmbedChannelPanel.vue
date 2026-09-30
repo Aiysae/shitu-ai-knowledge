@@ -489,7 +489,7 @@ const agentImageUploadEnabledEffective = computed(() =>
   drawerAgent.value?.config?.image_upload_enabled === true,
 )
 
-const DEFAULT_EMBED_BRAND_COLOR = '#80521F'
+const DEFAULT_EMBED_BRAND_COLOR = '#2456D3'
 
 function getDefaultEmbedPrimaryColor(): string {
   if (typeof window === 'undefined') return DEFAULT_EMBED_BRAND_COLOR
