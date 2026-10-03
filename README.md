@@ -38,7 +38,7 @@ docker compose --project-name shitu-ai up -d
 
 ## 版本与维护
 
-本发行版使用独立版本号，历史记录和技术基线保存在 [UPSTREAM_BASELINE](UPSTREAM_BASELINE) 及 Git 提交历史中。
+本发行版使用独立版本号，更新记录保存在 Git 提交历史中。
 Go module、既有环境变量、JWT audience、存储键及 SDK 协议名称保留兼容。第三方服务与包按真实身份标注。
 
 问题反馈：[Issues](https://github.com/Aiysae/shitu-ai-knowledge/issues)。漏洞报告：[Security](SECURITY.md)。
