@@ -1,0 +1,23 @@
+[Unit]
+Description=ShituKB Lite - Knowledge Base Management System
+After=network.target
+
+[Service]
+Type=simple
+User=shitukb
+Group=shitukb
+WorkingDirectory=/opt/shitukb
+EnvironmentFile=/opt/shitukb/.env.lite
+ExecStart=/opt/shitukb/ShituKB-lite
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/shitukb/data
+
+[Install]
+WantedBy=multi-user.target

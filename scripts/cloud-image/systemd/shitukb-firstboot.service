@@ -1,0 +1,17 @@
+[Unit]
+Description=ShituKB first-boot initialization (runs once)
+After=docker.service network-online.target
+Requires=docker.service
+Wants=network-online.target
+Before=shitukb.service
+ConditionPathExists=/usr/local/sbin/shitukb-firstboot.sh
+ConditionPathExists=!/opt/ShituKB/.firstboot.done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/shitukb-firstboot.sh
+RemainAfterExit=no
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target
