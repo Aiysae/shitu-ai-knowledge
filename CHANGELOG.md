@@ -1,5 +1,11 @@
 # 势途AI企业级知识库发行记录
 
+## v0.1.1 · 2026-10-15
+
+- 用独立仓库代码重新构建 app、docreader、ui 镜像。
+- 新增 shitu-ai-sandbox 镜像（main、main-cube、main-desktop、main-desktop-cube）。
+- 镜像同时发布版本号、main 和 latest 标签。
+
 ## v0.1.0 · 2026-09-29
 
 - 统一产品名称、Logo、浏览器图标、登录与帮助入口。
